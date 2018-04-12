@@ -1,2 +1,2 @@
 # fluentjava.org
-The fluentjava.org website
+The [fluentjava.org](http://fluentjava.org) website
