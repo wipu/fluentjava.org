@@ -1,0 +1,15 @@
+<span class='kw'>package</span>&nbsp;<span class='id pa-dec'>org</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>fluentjava</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>christmastree</span><span class='pu'>;</span><br/>
+<br/>
+<span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>MinimalBean</span>&nbsp;<span class='pu'>{</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='type field'>String</span>&nbsp;<span class='id field'>value</span><span class='pu'>;</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='type'>String</span>&nbsp;<span class='id me-name'>getValue</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id field'>value</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>setValue</span><span class='pu'>(</span><span class='type para'>String</span>&nbsp;<span class='id para'>value</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>this</span><span class='pu'>.</span><span class='id field'>value</span>&nbsp;<span class=''>=</span>&nbsp;<span class='id para'>value</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+<span class='pu'>}</span><br/>

@@ -1,0 +1,6 @@
+<span class='kw'>package</span>&nbsp;<span class='id pa-dec'>org</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>fluentjava</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>christmastree</span><span class='pu'>;</span><br/>
+<br/>
+<span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>ExtendsAndImplements</span>&nbsp;<span class='kw'>extends</span>&nbsp;<span class=''>MinimalClass</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>implements</span>&nbsp;<span class=''>MinimalInterface</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// nothing to add</span><br/>
+<span class='pu'>}</span><br/>

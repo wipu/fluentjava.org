@@ -1,0 +1,5 @@
+<span class='kw'>package</span>&nbsp;<span class='id pa-dec'>org</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>fluentjava</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>christmastree</span><span class='pu'>;</span><br/>
+<br/>
+<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>MinimalClass</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// nothing here but this comment</span><br/>
+<span class='pu'>}</span><br/>

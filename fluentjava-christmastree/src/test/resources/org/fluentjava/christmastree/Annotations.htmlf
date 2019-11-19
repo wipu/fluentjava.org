@@ -1,0 +1,25 @@
+<span class='kw'>package</span>&nbsp;<span class='id pa-dec'>org</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>fluentjava</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>christmastree</span><span class='pu'>;</span><br/>
+<br/>
+<span class='kw'>import</span>&nbsp;<span class=''>org</span><span class='pu'>.</span><span class=''>junit</span><span class='pu'>.</span><span class=''>Ignore</span><span class='pu'>;</span><br/>
+<br/>
+<span class='pu'>@</span><span class='annot'>Ignore</span><br/>
+<span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>Annotations</span>&nbsp;<span class='pu'>{</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='id me-name'>Annotations</span><span class='pu'>(@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;unused&quot;</span><span class='pu'>)</span>&nbsp;<span class='kw'>int</span>&nbsp;<span class='id para'>unusedParameter</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// nothing here</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;unused&quot;</span><span class='pu'>)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='type field'>String</span>&nbsp;<span class='id field'>unusedField</span><span class='pu'>;</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;unused&quot;</span><span class='pu'>)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>unusedMethod</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// nothing here</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>a</span><span class='pu'>(@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;unused&quot;</span><span class='pu'>)</span>&nbsp;<span class='kw'>int</span>&nbsp;<span class='id para'>unusedParameter</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;unused&quot;</span><span class='pu'>)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>int</span>&nbsp;<span class='id localvar'>unusedLocalVar</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+<span class='pu'>}</span><br/>

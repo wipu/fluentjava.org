@@ -1,0 +1,38 @@
+<span class='kw'>package</span>&nbsp;<span class='id pa-dec'>org</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>fluentjava</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>christmastree</span><span class='pu'>;</span><br/>
+<br/>
+<span class='kw'>import</span>&nbsp;<span class=''>java</span><span class='pu'>.</span><span class=''>util</span><span class='pu'>.</span><span class=''>Comparator</span><span class='pu'>;</span><br/>
+<span class='kw'>import</span>&nbsp;<span class=''>java</span><span class='pu'>.</span><span class=''>util</span><span class='pu'>.</span><span class=''>HashMap</span><span class='pu'>;</span><br/>
+<span class='kw'>import</span>&nbsp;<span class=''>java</span><span class='pu'>.</span><span class=''>util</span><span class='pu'>.</span><span class=''>Map</span><span class='pu'>;</span><br/>
+<br/>
+<span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>GenericTypes</span><span class=''>&lt;</span><span class='id gen-ref'>CLASSTYPE</span><span class=''>&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>implements</span>&nbsp;<span class=''>Comparator&lt;String&gt;</span><span class='pu'>,</span>&nbsp;<span class=''>Comparable&lt;GenericTypes&lt;?&gt;&gt;</span>&nbsp;<span class='pu'>{</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>final</span>&nbsp;<span class='type gen-ref'>CLASSTYPE</span>&nbsp;<span class='id field'>arg</span><span class='pu'>;</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='id me-name'>GenericTypes</span><span class='pu'>(</span><span class='type gen-ref'>CLASSTYPE</span>&nbsp;<span class='id para'>arg</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>this</span><span class='pu'>.</span><span class='id field'>arg</span>&nbsp;<span class=''>=</span>&nbsp;<span class='id para'>arg</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>Override</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>int</span>&nbsp;<span class='id me-name'>compareTo</span><span class='pu'>(</span><span class='type para'>GenericTypes</span><span class=''>&lt;</span><span class='type gen-diam'>?</span><span class=''>&gt;</span>&nbsp;<span class='id para'>o</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>throw</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class=''>UnsupportedOperationException</span><span class='pu'>(</span><span class='str'>&quot;not really&quot;</span><span class='pu'>);</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>Override</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>int</span>&nbsp;<span class='id me-name'>compare</span><span class='pu'>(</span><span class='type para'>String</span>&nbsp;<span class='id para'>o1</span><span class='pu'>,</span>&nbsp;<span class='type para'>String</span>&nbsp;<span class='id para'>o2</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id para'>o2</span><span class='pu'>.</span><span class='id'>compareTo</span><span class='pu'>(</span><span class='id para'>o1</span><span class='pu'>);</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class=''>&lt;</span><span class='id gen-ref'>TYPE</span>&nbsp;<span class='kw'>extends</span>&nbsp;<span class=''>Runnable&gt;</span>&nbsp;<span class='type gen-ref'>TYPE</span>&nbsp;<span class='id me-name'>meth</span><span class='pu'>(</span><span class='type para'>Class</span><span class=''>&lt;</span><span class='type gen-diam'>TYPE</span><span class=''>&gt;</span>&nbsp;<span class='id para'>clazz</span><span class='pu'>)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>throws</span>&nbsp;<span class=''>Exception</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='type gen-ref'>TYPE</span>&nbsp;<span class='id localvar'>inst</span>&nbsp;<span class=''>=</span>&nbsp;<span class='id para'>clazz</span><span class='pu'>.</span><span class='id'>newInstance</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id localvar'>inst</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class=''>&lt;</span><span class='id gen-ref'>T1</span><span class='pu'>,</span>&nbsp;<span class='id gen-ref'>T2</span><span class=''>&gt;</span>&nbsp;<span class='type'>Map</span><span class=''>&lt;</span><span class='type gen-diam'>T1</span><span class='pu'>,</span>&nbsp;<span class='type gen-diam'>T2</span><span class=''>&gt;</span>&nbsp;<span class='id me-name'>twoGenerics</span><span class='pu'>(</span><span class='type gen-ref'>T1</span>&nbsp;<span class='id para'>t1</span><span class='pu'>,</span>&nbsp;<span class='type gen-ref'>T2</span>&nbsp;<span class='id para'>t2</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='type localvar'>Map</span><span class=''>&lt;</span><span class='type gen-diam'>T1</span><span class='pu'>,</span>&nbsp;<span class='type gen-diam'>T2</span><span class=''>&gt;</span>&nbsp;<span class='id localvar'>m</span>&nbsp;<span class=''>=</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class=''>HashMap&lt;&gt;</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id localvar'>m</span><span class='pu'>.</span><span class='id absmeth-call'>put</span><span class='pu'>(</span><span class='id para'>t1</span><span class='pu'>,</span>&nbsp;<span class='id para'>t2</span><span class='pu'>);</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id localvar'>m</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+<span class='pu'>}</span><br/>

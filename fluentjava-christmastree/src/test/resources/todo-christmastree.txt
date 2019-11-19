@@ -1,0 +1,15 @@
+- maybe: scope is not needed, a 1-dimensional label is enough?
+
+- maybe: branding: The entrypoint class name?
+
+- maybe: fluent entrypoint api
+
+- either make utility classes package-private or better, separate package (module) for them and the api
+
+- separate package(s) for test fodder java files
+
+- tasks for TODO comments in code
+
+- remove dependency to log4j
+  * replace with slf4j?
+  * or remove all logging when things have stabilized?

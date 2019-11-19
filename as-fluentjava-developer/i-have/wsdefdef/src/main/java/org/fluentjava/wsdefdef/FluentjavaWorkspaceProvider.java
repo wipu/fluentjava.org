@@ -11,7 +11,8 @@ public class FluentjavaWorkspaceProvider implements WorkspaceModuleProvider {
 		return JavaSrcModule.with().name("fluentjava-wsdef")
 				.locationUnderWsRoot("as-fluentjava-developer/i-have/wsdef")
 				.mainJava("src/main/java").mainDeps(ctx.iwantApiModules())
-				.mainDeps(ctx.wsdefdefModule()).end();
+				.mainDeps(ctx.wsdefdefModule())
+				.mainDeps(ctx.iwantPlugin().jacoco().withDependencies()).end();
 	}
 
 	@Override

@@ -1,0 +1,30 @@
+<span class='kw'>package</span>&nbsp;<span class='id pa-dec'>org</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>fluentjava</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>christmastree</span><span class='pu'>;</span><br/>
+<br/>
+<span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>MethodCalls</span>&nbsp;<span class='pu'>{</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;static-method&quot;</span><span class='pu'>)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='type'>MethodCalls</span>&nbsp;<span class='id me-name'>nonStaticFactory</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class=''>MethodCalls</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='type'>MethodCalls</span>&nbsp;<span class='id me-name'>staticFactory</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class=''>MethodCalls</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='type'>String</span>&nbsp;<span class='id me-name'>unqualifiedCaller</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='str'>&quot;&quot;</span>&nbsp;<span class=''>+</span>&nbsp;<span class='id'>nonStaticFactory</span><span class='pu'>()</span>&nbsp;<span class=''>+</span>&nbsp;<span class='id stmeth-call'>staticFactory</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='type'>String</span>&nbsp;<span class='id me-name'>qualifiedaller</span><span class='pu'>(</span><span class='type para'>MethodCalls</span>&nbsp;<span class='id para'>inst</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='str'>&quot;&quot;</span>&nbsp;<span class=''>+</span>&nbsp;<span class='id para'>inst</span><span class='pu'>.</span><span class='id'>nonStaticFactory</span><span class='pu'>()</span>&nbsp;<span class=''>+</span>&nbsp;<span class='id'>MethodCalls</span><span class='pu'>.</span><span class='id stmeth-call'>staticFactory</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='type'>String</span>&nbsp;<span class='id me-name'>nestedCaller</span><span class='pu'>(</span><span class='type para'>MethodCalls</span>&nbsp;<span class='id para'>inst</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='str'>&quot;&quot;</span>&nbsp;<span class=''>+</span>&nbsp;<span class='id para'>inst</span><span class='pu'>.</span><span class='id'>nonStaticFactory</span><span class='pu'>().</span><span class='id'>nonStaticFactory</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>callerOfAbstract</span><span class='pu'>(</span><span class='type para'>Runnable</span>&nbsp;<span class='id para'>r</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>r</span><span class='pu'>.</span><span class='id absmeth-call'>run</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+<span class='pu'>}</span><br/>

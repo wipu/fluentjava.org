@@ -1,0 +1,3 @@
+<span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>ClassInDefaultPackage</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// nothing here but this comment</span><br/>
+<span class='pu'>}</span><br/>
