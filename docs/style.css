@@ -1,2 +1,4 @@
 body {background: white; font-family: verdana, arial, sans-serif; font-size: 1em}
 p {width:50em;}
+a.shy-link {color: dark-gray; text-decoration: none;}
+.legal {text-transform: uppercase;}
