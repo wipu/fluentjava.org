@@ -28,6 +28,10 @@ public class FluentjavaWorkspaceProvider implements WorkspaceModuleProvider {
 		return "org.fluentjava.wsdef.FluentjavaWorkspaceFactory";
 	}
 
+	/**
+	 * These modules are being developed as part of this project, but they are
+	 * also used for building.
+	 */
 	public static class FluentjavaBuildtimeModules extends JavaModules {
 
 		private static JavaBinModule comGithubJavaparserModule(String subname) {
