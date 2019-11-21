@@ -8,7 +8,7 @@ public class FluentjavaWorkspaceFactory implements WorkspaceFactory {
 
 	@Override
 	public Workspace workspace(WorkspaceContext ctx) {
-		return new FluentjavaWorkspace();
+		return new FluentjavaWorkspace(ctx);
 	}
 
 }
