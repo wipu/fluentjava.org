@@ -11,7 +11,7 @@ import org.fluentjava.wsdefdef.FluentjavaWorkspaceProvider;
 public class FluentjavaModules extends JavaModules {
 
 	private final FluentjavaWorkspaceProvider.FluentjavaBuildtimeModules buildtime = FluentjavaWorkspaceProvider.BUILDTIME_MODULES;
-	private final JavaSrcModule christmastree = buildTimeModule(
+	 final JavaSrcModule christmastree = buildTimeModule(
 			buildtime.christmastree);
 
 	private JavaSrcModule buildTimeModule(JavaSrcModule module) {

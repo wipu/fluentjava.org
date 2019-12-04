@@ -64,6 +64,7 @@ public class VisitorImpl extends GenericVisitorWithDefaults<Void, Void> {
 		for (Node c : n.getChildNodes()) {
 			c.accept(this, null);
 		}
+		n.getComment().map(it -> it.accept(this, null));
 		return null;
 	}
 

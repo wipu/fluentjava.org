@@ -1,0 +1,26 @@
+- utilize syntax colouring
+
+- short article: keep the code formatted!
+
+- "keep your code 3d": formatting=>2d, colour adds a 3rd dimension
+  * a "preface" to the 2 actual articles
+
+---
+
+Syntax colouring exists for a reason. When a programmer reads code, he is <i>parsing</i> it. The parsing
+is easier, if the computer has already marked token types with colour.
+
+Like with any tool, you benefit only as much as you actually <i>use</i> the tool. So, in the spirit of Extreme
+Programming, why not use the tool as much as possible? Because syntax colouring can even help spot bugs, as
+we can see below.
+
+TODO explain my settings, and we demo them here
+
+<h2>Variable scope</h2>
+
+Variable scope (and [minimizing it]) is a very important part of code semantics and maintainability.
+
+:: Compare these VariableScopeDemo:demo
+
+Then TODO VariableScopeDemo:accidental-field-scope
+

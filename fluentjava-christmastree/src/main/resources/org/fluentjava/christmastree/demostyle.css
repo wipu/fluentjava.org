@@ -11,24 +11,3 @@ body {background: white; font: 12px verdana, arial, sans-serif;}
     border-color: darkgray;
     border-width: 1px;
 }
-.annot {color: darkgray;}
-.char {color: #00CC00; font-weight: bold;}
-.kw {font-weight: bold; color: purple;}
-.id {color:black;}
-.id.cl-dec {color:darkblue; font-weight: bold;}
-.id.field {color:blue;}
-.id.stfield {color:blue; font-style: italic;}
-.id.type.const {color:black;}
-.id.const {color:#0000C0; font-style: italic; font-weight: bold;}
-.id.type {color:black;}
-.id.para {color:#8B6914;}
-.id.localvar {color:#1E90FF;}
-.id.me-name {font-weight:bold;}
-.id.stmeth-call {font-style: italic;}
-.id.absmeth-call {color: darkgray;}
-.pu {color:darkgray;}
-.comm {color: darkgreen;}
-.gen-diam {color: darkgreen; text-decoration: underline;}
-.gen-ref {color: darkgreen; font-weight: bold;}
-.num {color: #FFA500;}
-.str {color: #00CC00;}

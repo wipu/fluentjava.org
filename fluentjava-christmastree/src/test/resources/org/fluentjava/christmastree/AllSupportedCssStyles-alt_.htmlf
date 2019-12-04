@@ -1,0 +1,32 @@
+<span class='alt_kw'>package</span>&nbsp;<span class='alt_id alt_pa-dec'>org</span><span class='alt_id alt_pu alt_pa-dec'>.</span><span class='alt_id alt_pa-dec'>fluentjava</span><span class='alt_id alt_pu alt_pa-dec'>.</span><span class='alt_id alt_pa-dec'>christmastree</span><span class='alt_pu'>;</span><br/>
+<br/>
+<span class='alt_kw'>public</span>&nbsp;<span class='alt_kw'>class</span>&nbsp;<span class='alt_id alt_cl-dec'>AllSupportedCssStyles</span><span class=''>&lt;</span><span class='alt_id alt_gen-ref'>GENERIC</span>&nbsp;<span class='alt_kw'>extends</span>&nbsp;<span class=''>Annotations&gt;</span>&nbsp;<span class='alt_kw'>extends</span>&nbsp;<span class=''>Literals</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>implements</span>&nbsp;<span class=''>Runnable</span>&nbsp;<span class='alt_pu'>{</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>public</span>&nbsp;<span class='alt_kw'>static</span>&nbsp;<span class='alt_kw'>final</span>&nbsp;<span class='alt_kw'>int</span>&nbsp;<span class='alt_id alt_const'>A_CONSTANT</span>&nbsp;<span class=''>=</span>&nbsp;<span class='alt_num'>0</span><span class='alt_pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>private</span>&nbsp;<span class='alt_kw'>char</span>&nbsp;<span class='alt_id alt_field'>charLiteral</span>&nbsp;<span class=''>=</span>&nbsp;<span class='alt_char'>'c'</span><span class='alt_pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>public</span>&nbsp;<span class='alt_type alt_field'>String</span>&nbsp;<span class='alt_id alt_field'>aField</span>&nbsp;<span class=''>=</span>&nbsp;<span class='alt_str'>&quot;a String literal, &quot;</span>&nbsp;<span class=''>+</span>&nbsp;<span class='alt_id alt_field'>charLiteral</span><span class='alt_pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>public</span>&nbsp;<span class='alt_kw'>static</span>&nbsp;<span class='alt_kw'>boolean</span>&nbsp;<span class='alt_id alt_stfield'>staticField</span><span class='alt_pu'>;</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_pu'>@</span><span class='alt_annot'>Override</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>public</span>&nbsp;<span class='alt_kw'>void</span>&nbsp;<span class='alt_id alt_me-name'>run</span><span class='alt_pu'>()</span>&nbsp;<span class='alt_pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>// just a comment</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_type'>String</span>&nbsp;<span class='alt_id alt_me-name'>varScopes</span><span class='alt_pu'>(</span><span class='alt_type alt_para'>String</span>&nbsp;<span class='alt_id alt_para'>param</span><span class='alt_pu'>,</span>&nbsp;<span class='alt_type alt_gen-ref'>GENERIC</span>&nbsp;<span class='alt_id alt_para'>gen</span><span class='alt_pu'>)</span>&nbsp;<span class='alt_pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>double</span>&nbsp;<span class='alt_id alt_localvar'>localVar</span>&nbsp;<span class=''>=</span>&nbsp;<span class='alt_num'>0.1D</span><span class='alt_pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_type alt_gen-ref'>GENERIC</span>&nbsp;<span class='alt_id alt_localvar'>genCopy</span>&nbsp;<span class=''>=</span>&nbsp;<span class='alt_id alt_para'>gen</span><span class='alt_pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>return</span>&nbsp;<span class='alt_str'>&quot;&quot;</span>&nbsp;<span class=''>+</span>&nbsp;<span class='alt_id alt_const'>A_CONSTANT</span>&nbsp;<span class=''>+</span>&nbsp;<span class='alt_id alt_stfield'>staticField</span>&nbsp;<span class=''>+</span>&nbsp;<span class='alt_id alt_field'>aField</span>&nbsp;<span class=''>+</span>&nbsp;<span class='alt_id alt_localvar'>localVar</span>&nbsp;<span class=''>+</span>&nbsp;<span class='alt_id alt_para'>param</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=''>+</span>&nbsp;<span class='alt_id alt_localvar'>genCopy</span><span class='alt_pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>void</span>&nbsp;<span class='alt_id alt_me-name'>methodCalls</span><span class='alt_pu'>(</span><span class='alt_type alt_para'>Runnable</span>&nbsp;<span class='alt_id alt_para'>r</span><span class='alt_pu'>,</span>&nbsp;<span class='alt_type alt_para'>String</span>&nbsp;<span class='alt_id alt_para'>s</span><span class='alt_pu'>)</span>&nbsp;<span class='alt_pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>// abstract:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_id alt_para'>r</span><span class='alt_pu'>.</span><span class='alt_id alt_absmeth-call'>run</span><span class='alt_pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>// concrete:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_id alt_para'>s</span><span class='alt_pu'>.</span><span class='alt_id'>length</span><span class='alt_pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>// static:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_id'>String</span><span class='alt_pu'>.</span><span class='alt_id alt_stmeth-call'>valueOf</span><span class='alt_pu'>(</span><span class='alt_kw'>true</span><span class='alt_pu'>);</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_pu'>}</span><br/>
+<br/>
+<span class='alt_pu'>}</span><br/>

@@ -29,7 +29,7 @@ public class FluentjavaWorkspace implements Workspace {
 	public List<? extends Target> targets(TargetDefinitionContext ctx) {
 		List<Target> t = new ArrayList<>();
 		t.add(coverageReport());
-		t.add(new FluentjavaSite(wsdefJavaOf));
+		t.add(new FluentjavaSite(wsdefJavaOf, modules.christmastree.mainArtifact()));
 		return t;
 	}
 

@@ -1,0 +1,21 @@
+.alt_annot {color: darkgray; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_char {color: #00CC00; font-weight: bold; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_kw {font-weight: bold; color: purple; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id {color:black; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_cl-dec {color:darkblue; font-weight: bold; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_field {color:blue; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_stfield {color:blue; font-style: italic; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_type.alt_const {color:black; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_const {color:#0000C0; font-style: italic; font-weight: bold; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_type {color:black; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_para {color:#8B6914; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_localvar {color:#1E90FF; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_me-name {font-weight:bold; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_stmeth-call {font-style: italic; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_id.alt_absmeth-call {color: darkgray; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_pu {color:darkgray; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_comm {color: darkgreen; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_gen-diam {color: darkgreen; text-decoration: underline; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_gen-ref {color: darkgreen; font-weight: bold; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_num {color: #FFA500; border-color:lightgray; border-style: solid; border-width: 1px;}
+.alt_str {color: #00CC00; border-color:lightgray; border-style: solid; border-width: 1px;}

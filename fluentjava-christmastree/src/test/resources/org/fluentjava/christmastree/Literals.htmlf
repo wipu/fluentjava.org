@@ -2,7 +2,6 @@
 <br/>
 <span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>Literals</span>&nbsp;<span class='pu'>{</span><br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class=''>// TODO fix color of this comment</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>boolean</span>&nbsp;<span class='id field'>bo</span>&nbsp;<span class=''>=</span>&nbsp;<span class='kw'>false</span><span class='pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>byte</span>&nbsp;<span class='id field'>by</span>&nbsp;<span class=''>=</span>&nbsp;<span class='num'>127</span><span class='pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>char</span>&nbsp;<span class='id field'>c</span>&nbsp;<span class=''>=</span>&nbsp;<span class='char'>'c'</span><span class='pu'>;</span><br/>

@@ -2,7 +2,6 @@ package org.fluentjava.christmastree;
 
 public class Literals {
 
-	// TODO fix color of this comment
 	public boolean bo = false;
 	public byte by = 127;
 	public char c = 'c';

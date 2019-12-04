@@ -8,6 +8,12 @@ import org.apache.commons.lang.StringEscapeUtils;
 
 public class HtmlRenderer implements Renderer {
 
+	private final String cssClassPrefix;
+
+	public HtmlRenderer(String cssClassPrefix) {
+		this.cssClassPrefix = cssClassPrefix;
+	}
+
 	@Override
 	public String render(List<LabeledLine> lines) {
 		StringBuilder b = new StringBuilder();
@@ -28,9 +34,11 @@ public class HtmlRenderer implements Renderer {
 		return b.toString();
 	}
 
-	private static void labelClasses(StringBuilder b, LabeledSpan span) {
-		Stream<String> labels = span.labels().stream().map(x -> x.shortName());
-		Stream<String> scopes = span.scopes().stream().map(x -> x.shortName());
+	private void labelClasses(StringBuilder b, LabeledSpan span) {
+		Stream<String> labels = span.labels().stream()
+				.map(x -> cssClassPrefix + x.shortName());
+		Stream<String> scopes = span.scopes().stream()
+				.map(x -> cssClassPrefix + x.shortName());
 		Stream<String> both = Stream.concat(labels, scopes);
 		b.append(both.collect(Collectors.joining(" ")));
 	}
