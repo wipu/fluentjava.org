@@ -98,7 +98,7 @@ public class FluentjavaSite extends TargetBase {
 		String snippet(String snippetName) throws IOException {
 			return snippetFromJavaHtml(snippetName, html);
 		}
-		
+
 		@Override
 		public String toString() {
 			return html;
@@ -132,8 +132,7 @@ public class FluentjavaSite extends TargetBase {
 		String useAbstractServiceHtml = serviceAbstractnessDemoColoured
 				.snippet("abstract");
 
-		Utils.Java variableScopeDemoJava = u.java(
-				VariableScopeDemo.class);
+		Utils.Java variableScopeDemoJava = u.java(VariableScopeDemo.class);
 		String variableScopeDemo = variableScopeDemoJava.coloured().html;
 
 		html.append("<p>Concr</p>\n");

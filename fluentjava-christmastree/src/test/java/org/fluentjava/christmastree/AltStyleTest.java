@@ -26,7 +26,8 @@ public class AltStyleTest {
 
 	static String alt(String prefix, String css) {
 		String altCss = css.replaceAll("\\.([^.{]*)", "." + prefix + "$1")
-				.replaceAll("}\n", " border-color:lightgray; border-style: solid; border-width: 1px;}\n");
+				.replaceAll("}\n",
+						" border-color:lightgray; border-style: solid; border-width: 1px;}\n");
 		return altCss;
 	}
 
