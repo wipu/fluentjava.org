@@ -114,54 +114,16 @@ public class FluentjavaSite extends TargetBase {
 		html.append("<body>\n");
 		html.append("<h1>Utilize syntax colouring</h1>\n");
 
-		Utils.Java serviceAbstractnessDemoJava = u
-				.java(ServiceAbstractnessDemo.class);
-		String serviceAbstractnessSnippet = "the-calls";
+		html.append(
+				"<h2>Detecting use of a concrete implementation of a service</h2>\n");
+		snippetPair(html, u.java(ServiceAbstractnessDemo.class), "the-calls");
 
-		html.append("<p>Without colour</p>\n");
-		html.append("<div class='java'>\n");
-		html.append(serviceAbstractnessDemoJava.dull()
-				.snippet(serviceAbstractnessSnippet));
-		html.append("</div>\n");
+		html.append("<h2>Accidental reference of a field</h2>\n");
+		snippetPair(html, u.java(VariableScopeDemo.class),
+				"accidental-field-scope");
 
-		html.append("<p>With colour</p>\n");
-		html.append("<div class='java'>\n");
-		html.append(serviceAbstractnessDemoJava.coloured()
-				.snippet(serviceAbstractnessSnippet));
-		html.append("</div>\n");
-
-		Utils.Java variableScopeDemoJava = u.java(VariableScopeDemo.class);
-		String accidentalFieldScopeSnippet = "accidental-field-scope";
-
-		html.append("<p>Consider these two:</p>\n");
-
-		html.append("<p>Without colour</p>\n");
-		html.append("<div class='java'>\n");
-		html.append(variableScopeDemoJava.dull()
-				.snippet(accidentalFieldScopeSnippet));
-		html.append("</div>\n");
-
-		html.append("<p>With colour</p>\n");
-		html.append("<div class='java'>\n");
-		html.append(variableScopeDemoJava.coloured()
-				.snippet(accidentalFieldScopeSnippet));
-		html.append("</div>\n");
-
-		Utils.Java genVsTypeJava = u.java(GenericVsTypeDemo.class);
-		String genVsTypeSnippet = "gen-vs-type";
-
-		html.append("<p>Consider these two:</p>\n");
-
-		html.append("<p>Without colour</p>\n");
-		html.append("<div class='java'>\n");
-		html.append(genVsTypeJava.dull().snippet(genVsTypeSnippet));
-		html.append("</div>\n");
-
-		html.append("<p>With colour</p>\n");
-		html.append("<div class='java'>\n");
-		html.append(genVsTypeJava.coloured().snippet(genVsTypeSnippet));
-		html.append("</div>\n");
-
+		html.append("<h2>Generic type vs non-generic type</h2>\n");
+		snippetPair(html, u.java(GenericVsTypeDemo.class), "gen-vs-type");
 		html.append(
 				"<p>No use trying to find a type called T2, which we can see from its colour.</p>");
 
@@ -182,6 +144,25 @@ public class FluentjavaSite extends TargetBase {
 				christmastreeResource("java-default.css"));
 
 		System.err.println("Done populating " + dest);
+	}
+
+	private static void snippetPair(StringBuilder html, Utils.Java java,
+			String snippet) throws IOException {
+		html.append("<table><tr>\n");
+
+		html.append("<td>");
+		html.append("<div class='java'>\n");
+		html.append(java.dull().snippet(snippet));
+		html.append("</div>\n");
+		html.append("</td>");
+
+		html.append("<td>");
+		html.append("<div class='java'>\n");
+		html.append(java.coloured().snippet(snippet));
+		html.append("</div>\n");
+		html.append("</td>");
+
+		html.append("</tr></table>\n");
 	}
 
 	private String javaContent(TargetEvaluationContext ctx, Class<?> theClass)
