@@ -7,8 +7,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 import org.apache.commons.io.FileUtils;
+import org.fluentjava.articles.syntaxcolour.GenericVsTypeDemo;
 import org.fluentjava.articles.syntaxcolour.ServiceAbstractnessDemo;
-import org.fluentjava.articles.syntaxcolour.SyntaxColourDemo;
 import org.fluentjava.articles.syntaxcolour.VariableScopeDemo;
 import org.fluentjava.christmastree.JavasrcToHtml;
 import org.fluentjava.iwant.api.model.Path;
@@ -52,14 +52,6 @@ public class FluentjavaSite extends TargetBase {
 			this.j2h = new JavasrcToHtml(4,
 					Arrays.asList(ctx.cached(wsdefJava)),
 					getClass().getClassLoader());
-		}
-
-		String colourHtml(String java) {
-			return j2h.toHtml(java, "");
-		}
-
-		String dullHtml(String java) {
-			return j2h.toHtml(java, "min_");
 		}
 
 		Java java(Class<?> theClass) throws IOException {
@@ -109,7 +101,6 @@ public class FluentjavaSite extends TargetBase {
 	@Override
 	public void path(TargetEvaluationContext ctx) throws Exception {
 		Utils u = new Utils(ctx);
-		String syntaxColourDemo = javaContent(ctx, SyntaxColourDemo.class);
 
 		StringBuilder html = new StringBuilder();
 		html.append("<html>\n");
@@ -125,37 +116,54 @@ public class FluentjavaSite extends TargetBase {
 
 		Utils.Java serviceAbstractnessDemoJava = u
 				.java(ServiceAbstractnessDemo.class);
-		StyledJavaHtml serviceAbstractnessDemoColoured = serviceAbstractnessDemoJava
-				.coloured();
-		String useConcreteServiceImplHtml = serviceAbstractnessDemoColoured
-				.snippet("concrete");
-		String useAbstractServiceHtml = serviceAbstractnessDemoColoured
-				.snippet("abstract");
+		String serviceAbstractnessSnippet = "the-calls";
+
+		html.append("<p>Without colour</p>\n");
+		html.append("<div class='java'>\n");
+		html.append(serviceAbstractnessDemoJava.dull()
+				.snippet(serviceAbstractnessSnippet));
+		html.append("</div>\n");
+
+		html.append("<p>With colour</p>\n");
+		html.append("<div class='java'>\n");
+		html.append(serviceAbstractnessDemoJava.coloured()
+				.snippet(serviceAbstractnessSnippet));
+		html.append("</div>\n");
 
 		Utils.Java variableScopeDemoJava = u.java(VariableScopeDemo.class);
-		String variableScopeDemo = variableScopeDemoJava.coloured().html;
-
-		html.append("<p>Concr</p>\n");
-		html.append("<div class='java'>\n");
-		html.append(useConcreteServiceImplHtml);
-		html.append("</div>\n");
-
-		html.append("<p>Abs</p>\n");
-		html.append("<div class='java'>\n");
-		html.append(useAbstractServiceHtml);
-		html.append("</div>\n");
+		String accidentalFieldScopeSnippet = "accidental-field-scope";
 
 		html.append("<p>Consider these two:</p>\n");
 
-		html.append("<table><tr>");
-		html.append("<td><div class='java'>\n");
-		html.append(variableScopeDemoJava.dull());
-		html.append("</div></td>\n");
+		html.append("<p>Without colour</p>\n");
+		html.append("<div class='java'>\n");
+		html.append(variableScopeDemoJava.dull()
+				.snippet(accidentalFieldScopeSnippet));
+		html.append("</div>\n");
 
-		html.append("<td><div class='java'>\n");
-		html.append(variableScopeDemoJava.coloured());
-		html.append("</div></td>\n");
-		html.append("</tr></table>");
+		html.append("<p>With colour</p>\n");
+		html.append("<div class='java'>\n");
+		html.append(variableScopeDemoJava.coloured()
+				.snippet(accidentalFieldScopeSnippet));
+		html.append("</div>\n");
+
+		Utils.Java genVsTypeJava = u.java(GenericVsTypeDemo.class);
+		String genVsTypeSnippet = "gen-vs-type";
+
+		html.append("<p>Consider these two:</p>\n");
+
+		html.append("<p>Without colour</p>\n");
+		html.append("<div class='java'>\n");
+		html.append(genVsTypeJava.dull().snippet(genVsTypeSnippet));
+		html.append("</div>\n");
+
+		html.append("<p>With colour</p>\n");
+		html.append("<div class='java'>\n");
+		html.append(genVsTypeJava.coloured().snippet(genVsTypeSnippet));
+		html.append("</div>\n");
+
+		html.append(
+				"<p>No use trying to find a type called T2, which we can see from its colour.</p>");
 
 		html.append(
 				"<p>See blah and todo and how the latter is better, and how IDE defaults are somewhere in between etc.</p>\n");
@@ -169,7 +177,7 @@ public class FluentjavaSite extends TargetBase {
 
 		write(new File(dest, "utilize-syntax-colouring.html"), html.toString());
 		write(new File(dest, "style.css"),
-				cssWidth("38em", christmastreeResource("demostyle.css")));
+				cssWidth("45em", christmastreeResource("demostyle.css")));
 		write(new File(dest, "java-default.css"),
 				christmastreeResource("java-default.css"));
 

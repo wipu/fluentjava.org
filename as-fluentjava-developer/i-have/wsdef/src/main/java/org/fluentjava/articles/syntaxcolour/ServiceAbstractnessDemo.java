@@ -17,16 +17,14 @@ public class ServiceAbstractnessDemo {
 
 	}
 
-	// snippet-start concrete
+	// snippet-start the-calls
 	void useConcreteServiceImpl(ServiceImpl service) {
 		service.serveMe();
 	}
-	// snippet-end concrete
 
-	// snippet-start abstract
 	void useAbstractService(Service service) {
 		service.serveMe();
 	}
-	// snippet-end abstract
+	// snippet-end the-calls
 
 }

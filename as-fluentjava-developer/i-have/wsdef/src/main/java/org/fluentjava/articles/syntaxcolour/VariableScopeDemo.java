@@ -32,8 +32,8 @@ public class VariableScopeDemo {
 		// here we have so many lines of code that we cannot see the method
 		// parameter declaration anymore
 
-		// only the colour helps us see it's some _saved_ session, not the
-		// current one:
+		// the colour immediately tells us we are not using the given session
+		// but some saved one from a field:
 		useSessionAttribute(theSession.getAttribute("attr2"));
 	}
 	// snippet-end accidental-field-scope
