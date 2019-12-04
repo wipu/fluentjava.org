@@ -7,11 +7,11 @@ public class GenericVsTypeDemo<T1> {
 		// a non-generic type
 	}
 
-	T1 handleGenericType(T1 in) {
+	T1 handle(T1 in) {
 		return in;
 	}
 
-	T2 handleNonGenericType(T2 in) {
+	T2 handle(T2 in) {
 		return in;
 	}
 
