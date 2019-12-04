@@ -117,10 +117,16 @@ public class FluentjavaSite extends TargetBase {
 		html.append(
 				"<h2>Detecting use of a concrete implementation of a service</h2>\n");
 		snippetPair(html, u.java(ServiceAbstractnessDemo.class), "the-calls");
+		html.append(
+				"<p>Note how the colour of 'serveMe' helps us detect the (accidental?) use of a concrete class. Also, in the case of an abstract method"
+						+ " we know it's not useful to ctrl-click to it unless you really want to see the abstract declaration. Ctrl-T instead to select an implementation.</p>\n");
 
 		html.append("<h2>Accidental reference of a field</h2>\n");
 		snippetPair(html, u.java(VariableScopeDemo.class),
 				"accidental-field-scope");
+		html.append(
+				"<p>Even though we cannot see the method signature, colour tells us when we are using the given (current) session 'session'"
+						+ " and when we are (accidentally?) using some other session, saved in the field 'theSession'.</p>\n");
 
 		html.append("<h2>Generic type vs non-generic type</h2>\n");
 		snippetPair(html, u.java(GenericVsTypeDemo.class), "gen-vs-type");

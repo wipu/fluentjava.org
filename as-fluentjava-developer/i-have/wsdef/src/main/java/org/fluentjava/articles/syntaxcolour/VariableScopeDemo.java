@@ -26,14 +26,11 @@ public class VariableScopeDemo {
 
 	// snippet-start accidental-field-scope
 	void accidentalFieldScope(Session session) {
-		// all ok, we use the given (current) session:
 		useSessionAttribute(session.getAttribute("attr1"));
 
 		// here we have so many lines of code that we cannot see the method
 		// parameter declaration anymore
 
-		// the colour immediately tells us we are not using the given session
-		// but some saved one from a field:
 		useSessionAttribute(theSession.getAttribute("attr2"));
 	}
 	// snippet-end accidental-field-scope
