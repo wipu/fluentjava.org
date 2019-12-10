@@ -3,7 +3,7 @@ body {background: white; font: 12px verdana, arial, sans-serif;}
 .java {
     font-family:monospace;
     margin-left:33px;
-    width:60em;
+    display: inline-block;
     line-height:1.2em;
     background-color: #FCFCE7;
     padding: 2px;

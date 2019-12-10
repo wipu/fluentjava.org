@@ -145,7 +145,7 @@ public class FluentjavaSite extends TargetBase {
 
 		write(new File(dest, "utilize-syntax-colouring.html"), html.toString());
 		write(new File(dest, "style.css"),
-				cssWidth("45em", christmastreeResource("demostyle.css")));
+				christmastreeResource("demostyle.css"));
 		write(new File(dest, "java-default.css"),
 				christmastreeResource("java-default.css"));
 
@@ -204,16 +204,6 @@ public class FluentjavaSite extends TargetBase {
 				}
 			}
 		}
-	}
-
-	private static String cssWidth(String width, String css) {
-		String replaced = css.replaceFirst("    width:.*;",
-				"    width:" + width + ";");
-		if (replaced.equals(css)) {
-			throw new IllegalStateException(
-					"CSS width change wasn't effective.");
-		}
-		return replaced;
 	}
 
 	private String christmastreeResource(String name) throws IOException {
