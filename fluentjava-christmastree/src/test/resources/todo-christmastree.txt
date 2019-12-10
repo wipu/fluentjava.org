@@ -1,5 +1,7 @@
 - ask who called my syntax colour scheme "christmastree" and give credits in docs
 
+- type argument: List<String>: same green but not bold, underlined
+
 - maybe: scope is not needed, a 1-dimensional label is enough?
 
 - maybe: branding: The entrypoint class name?
