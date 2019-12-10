@@ -2,6 +2,10 @@
 
 - fix: green underlined "String" in implements Comparator<String> (GenericTypes.java)
 
+- stupid me: no need for css style prefix:
+  * just use ".java .kw" and ".altjava .kw" and put inside divs of style java or altjava, doh!
+  * so remove the feature
+
 - maybe: scope is not needed, a 1-dimensional label is enough?
 
 - maybe: branding: The entrypoint class name?
