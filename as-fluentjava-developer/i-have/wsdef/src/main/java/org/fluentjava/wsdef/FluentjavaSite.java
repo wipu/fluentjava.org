@@ -182,8 +182,8 @@ public class FluentjavaSite extends TargetBase {
 	// TODO use some ready-made util
 	private static String snippetFromJavaHtml(String snippetName,
 			String javaHtml) throws IOException {
-		String start = "snippet-start " + snippetName;
-		String end = "snippet-end " + snippetName;
+		String start = "snippet-start&nbsp;" + snippetName;
+		String end = "snippet-end&nbsp;" + snippetName;
 
 		StringBuilder out = new StringBuilder();
 		boolean reading = false;

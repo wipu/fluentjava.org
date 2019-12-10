@@ -5,12 +5,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>public</span>&nbsp;<span class='alt_kw'>static</span>&nbsp;<span class='alt_kw'>final</span>&nbsp;<span class='alt_kw'>int</span>&nbsp;<span class='alt_id alt_const'>A_CONSTANT</span>&nbsp;<span class=''>=</span>&nbsp;<span class='alt_num'>0</span><span class='alt_pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>private</span>&nbsp;<span class='alt_kw'>char</span>&nbsp;<span class='alt_id alt_field'>charLiteral</span>&nbsp;<span class=''>=</span>&nbsp;<span class='alt_char'>'c'</span><span class='alt_pu'>;</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>public</span>&nbsp;<span class='alt_type alt_field'>String</span>&nbsp;<span class='alt_id alt_field'>aField</span>&nbsp;<span class=''>=</span>&nbsp;<span class='alt_str'>&quot;a String literal, &quot;</span>&nbsp;<span class=''>+</span>&nbsp;<span class='alt_id alt_field'>charLiteral</span><span class='alt_pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>public</span>&nbsp;<span class='alt_type alt_field'>String</span>&nbsp;<span class='alt_id alt_field'>aField</span>&nbsp;<span class=''>=</span>&nbsp;<span class='alt_str'>&quot;a&nbsp;String&nbsp;literal,&nbsp;&quot;</span>&nbsp;<span class=''>+</span>&nbsp;<span class='alt_id alt_field'>charLiteral</span><span class='alt_pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>public</span>&nbsp;<span class='alt_kw'>static</span>&nbsp;<span class='alt_kw'>boolean</span>&nbsp;<span class='alt_id alt_stfield'>staticField</span><span class='alt_pu'>;</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_pu'>@</span><span class='alt_annot'>Override</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>public</span>&nbsp;<span class='alt_kw'>void</span>&nbsp;<span class='alt_id alt_me-name'>run</span><span class='alt_pu'>()</span>&nbsp;<span class='alt_pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>// just a comment</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>//&nbsp;just&nbsp;a&nbsp;comment</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_pu'>}</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_type'>String</span>&nbsp;<span class='alt_id alt_me-name'>varScopes</span><span class='alt_pu'>(</span><span class='alt_type alt_para'>String</span>&nbsp;<span class='alt_id alt_para'>param</span><span class='alt_pu'>,</span>&nbsp;<span class='alt_type alt_gen-ref'>GENERIC</span>&nbsp;<span class='alt_id alt_para'>gen</span><span class='alt_pu'>)</span>&nbsp;<span class='alt_pu'>{</span><br/>
@@ -21,11 +21,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_pu'>}</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_kw'>void</span>&nbsp;<span class='alt_id alt_me-name'>methodCalls</span><span class='alt_pu'>(</span><span class='alt_type alt_para'>Runnable</span>&nbsp;<span class='alt_id alt_para'>r</span><span class='alt_pu'>,</span>&nbsp;<span class='alt_type alt_para'>String</span>&nbsp;<span class='alt_id alt_para'>s</span><span class='alt_pu'>)</span>&nbsp;<span class='alt_pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>// abstract:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>//&nbsp;abstract:</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_id alt_para'>r</span><span class='alt_pu'>.</span><span class='alt_id alt_absmeth-call'>run</span><span class='alt_pu'>();</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>// concrete:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>//&nbsp;concrete:</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_id alt_para'>s</span><span class='alt_pu'>.</span><span class='alt_id'>length</span><span class='alt_pu'>();</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>// static:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_comm'>//&nbsp;static:</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_id'>String</span><span class='alt_pu'>.</span><span class='alt_id alt_stmeth-call'>valueOf</span><span class='alt_pu'>(</span><span class='alt_kw'>true</span><span class='alt_pu'>);</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='alt_pu'>}</span><br/>
 <br/>

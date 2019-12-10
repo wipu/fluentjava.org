@@ -5,12 +5,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='kw'>final</span>&nbsp;<span class='kw'>int</span>&nbsp;<span class='id const'>A_CONSTANT</span>&nbsp;<span class=''>=</span>&nbsp;<span class='num'>0</span><span class='pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='kw'>char</span>&nbsp;<span class='id field'>charLiteral</span>&nbsp;<span class=''>=</span>&nbsp;<span class='char'>'c'</span><span class='pu'>;</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='type field'>String</span>&nbsp;<span class='id field'>aField</span>&nbsp;<span class=''>=</span>&nbsp;<span class='str'>&quot;a String literal, &quot;</span>&nbsp;<span class=''>+</span>&nbsp;<span class='id field'>charLiteral</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='type field'>String</span>&nbsp;<span class='id field'>aField</span>&nbsp;<span class=''>=</span>&nbsp;<span class='str'>&quot;a&nbsp;String&nbsp;literal,&nbsp;&quot;</span>&nbsp;<span class=''>+</span>&nbsp;<span class='id field'>charLiteral</span><span class='pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='kw'>boolean</span>&nbsp;<span class='id stfield'>staticField</span><span class='pu'>;</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>Override</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>run</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// just a comment</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;just&nbsp;a&nbsp;comment</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='type'>String</span>&nbsp;<span class='id me-name'>varScopes</span><span class='pu'>(</span><span class='type para'>String</span>&nbsp;<span class='id para'>param</span><span class='pu'>,</span>&nbsp;<span class='type gen-ref'>GENERIC</span>&nbsp;<span class='id para'>gen</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
@@ -21,11 +21,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>methodCalls</span><span class='pu'>(</span><span class='type para'>Runnable</span>&nbsp;<span class='id para'>r</span><span class='pu'>,</span>&nbsp;<span class='type para'>String</span>&nbsp;<span class='id para'>s</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// abstract:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;abstract:</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>r</span><span class='pu'>.</span><span class='id absmeth-call'>run</span><span class='pu'>();</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// concrete:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;concrete:</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>s</span><span class='pu'>.</span><span class='id'>length</span><span class='pu'>();</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// static:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;static:</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>String</span><span class='pu'>.</span><span class='id stmeth-call'>valueOf</span><span class='pu'>(</span><span class='kw'>true</span><span class='pu'>);</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>

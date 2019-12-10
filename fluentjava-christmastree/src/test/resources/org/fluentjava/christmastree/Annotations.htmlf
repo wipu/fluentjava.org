@@ -6,7 +6,7 @@
 <span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>Annotations</span>&nbsp;<span class='pu'>{</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='id me-name'>Annotations</span><span class='pu'>(@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;unused&quot;</span><span class='pu'>)</span>&nbsp;<span class='kw'>int</span>&nbsp;<span class='id para'>unusedParameter</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// nothing here</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;nothing&nbsp;here</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;unused&quot;</span><span class='pu'>)</span><br/>
@@ -14,7 +14,7 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;unused&quot;</span><span class='pu'>)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>unusedMethod</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>// nothing here</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;nothing&nbsp;here</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>a</span><span class='pu'>(@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;unused&quot;</span><span class='pu'>)</span>&nbsp;<span class='kw'>int</span>&nbsp;<span class='id para'>unusedParameter</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>

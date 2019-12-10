@@ -15,7 +15,7 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>Override</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>int</span>&nbsp;<span class='id me-name'>compareTo</span><span class='pu'>(</span><span class='type para'>GenericTypes</span><span class=''>&lt;</span><span class='type gen-diam'>?</span><span class=''>&gt;</span>&nbsp;<span class='id para'>o</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>throw</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class=''>UnsupportedOperationException</span><span class='pu'>(</span><span class='str'>&quot;not really&quot;</span><span class='pu'>);</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>throw</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class=''>UnsupportedOperationException</span><span class='pu'>(</span><span class='str'>&quot;not&nbsp;really&quot;</span><span class='pu'>);</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>Override</span><br/>

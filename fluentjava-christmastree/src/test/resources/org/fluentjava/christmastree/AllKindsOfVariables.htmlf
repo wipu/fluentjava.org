@@ -2,7 +2,7 @@
 <br/>
 <span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>AllKindsOfVariables</span>&nbsp;<span class='pu'>{</span><br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='kw'>final</span>&nbsp;<span class='type const'>String</span>&nbsp;<span class='id const'>CONSTANT</span>&nbsp;<span class=''>=</span>&nbsp;<span class='str'>&quot;const value&quot;</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='kw'>final</span>&nbsp;<span class='type const'>String</span>&nbsp;<span class='id const'>CONSTANT</span>&nbsp;<span class=''>=</span>&nbsp;<span class='str'>&quot;const&nbsp;value&quot;</span><span class='pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='type field'>String</span>&nbsp;<span class='id field'>field</span><span class='pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='type stfield'>String</span>&nbsp;<span class='id stfield'>staticField</span><span class='pu'>;</span><br/>
 <br/>

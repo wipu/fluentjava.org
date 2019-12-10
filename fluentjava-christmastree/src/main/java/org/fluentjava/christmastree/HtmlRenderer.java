@@ -8,6 +8,7 @@ import org.apache.commons.lang.StringEscapeUtils;
 
 public class HtmlRenderer implements Renderer {
 
+	private static final String NBSP = "&nbsp;";
 	private final String cssClassPrefix;
 
 	public HtmlRenderer(String cssClassPrefix) {
@@ -26,12 +27,19 @@ public class HtmlRenderer implements Renderer {
 				b.append("<span class='");
 				labelClasses(b, span);
 				b.append("'>");
-				b.append(StringEscapeUtils.escapeHtml(span.rawContent()));
+				b.append(escaped(span));
 				b.append("</span>");
 			}
 			b.append("<br/>\n");
 		}
 		return b.toString();
+	}
+
+	private static String escaped(LabeledSpan span) {
+		String text = span.rawContent();
+		text = StringEscapeUtils.escapeHtml(text);
+		text = text.replace(" ", NBSP);
+		return text;
 	}
 
 	private void labelClasses(StringBuilder b, LabeledSpan span) {
@@ -45,7 +53,7 @@ public class HtmlRenderer implements Renderer {
 
 	private static void whitespace(StringBuilder b, LabeledSpan span) {
 		for (int i = 0; i < span.rawContent().length(); i++) {
-			b.append("&nbsp;");
+			b.append(NBSP);
 		}
 	}
 
