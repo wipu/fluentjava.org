@@ -35,14 +35,14 @@ public class JavasrcToHtml {
 		return b.toString();
 	}
 
-	public String toHtml(String java, String cssClassPrefix) {
+	public String toHtml(String java) {
 		String untabbedJava = java.replaceAll("\t", tabSpaces);
 		CompilationUnit cu = StaticJavaParser.parse(untabbedJava);
 		SpanLabelListenerImpl spanListener = new SpanLabelListenerImpl(
 				untabbedJava);
 		VisitorImpl astVisitor = new VisitorImpl(spanListener, solvingParser);
 		cu.accept(astVisitor, null);
-		Renderer renderer = new HtmlRenderer(cssClassPrefix);
+		Renderer renderer = new HtmlRenderer();
 		return renderer.render(spanListener.lines);
 	}
 

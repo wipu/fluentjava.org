@@ -11,7 +11,6 @@ import java.util.Arrays;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -25,7 +24,6 @@ public class JavasrcToHtmlTest {
 	private static File tmp;
 	private static String demoheader;
 	private static String demofooter;
-	private String cssClassPrefix;
 	private JavasrcToHtml javasrcToHtml;
 
 	@BeforeClass
@@ -35,15 +33,19 @@ public class JavasrcToHtmlTest {
 		FileUtils.deleteDirectory(tmp);
 		FileUtils.forceMkdir(tmp);
 		writeTmp("demostyle.css", resourceAsString("demostyle.css"));
-		writeTmp("java-default.css", resourceAsString("java-default.css"));
-		writeTmp("java-alt.css", toAlt(resourceAsString("java-default.css")));
+		writeTmp("div-java.css", resourceAsString("div-java.css"));
+		String javaDefaultCss = resourceAsString("java-default.css");
+		writeTmp("java-default.css", javaDefaultCss);
+		writeTmp("java-alt.css", altCss(javaDefaultCss));
 		demoheader = resourceAsString("demoheader.htmlf");
 		demofooter = resourceAsString("demofooter.htmlf");
 	}
 
-	private static String toAlt(String css) {
-		String alt = AltStyleTest.alt("alt_", css);
-		Assert.assertNotEquals(alt, css);
+	private static String altCss(String css) {
+		String alt = css;
+		alt = alt.replaceAll("\\.java ", ".altjava ");
+		alt = alt.replaceAll("}\n",
+				" border-color:lightgray; border-style: solid; border-width: 1px;}\n");
 		return alt;
 	}
 
@@ -51,7 +53,6 @@ public class JavasrcToHtmlTest {
 	public void before() {
 		javasrcToHtml = new JavasrcToHtml(TAB_WIDTH,
 				Arrays.asList(testFodderDir()), getClass().getClassLoader());
-		cssClassPrefix = "";
 	}
 
 	private static File testFodderDir() {
@@ -77,16 +78,11 @@ public class JavasrcToHtmlTest {
 		}
 	}
 
-	private String goldenMaster(Class<?> fodderClass) {
-		String stylePostfix = "";
-		if (cssClassPrefix.length() > 0) {
-			stylePostfix = "-" + cssClassPrefix;
-		}
+	private static String goldenMaster(Class<?> fodderClass) {
 		String resourcePath = "/"
 				+ JavasrcToHtml.class.getPackage().getName().replace(".", "/")
-				+ "/" + fodderClass.getSimpleName() + stylePostfix + ".htmlf";
-		LOG.debug("Loading golden master for " + fodderClass
-				+ "(css class prefix: '" + cssClassPrefix + "')");
+				+ "/" + fodderClass.getSimpleName() + ".htmlf";
+		LOG.debug("Loading golden master for " + fodderClass);
 		return resourceAsString(resourcePath);
 	}
 
@@ -105,13 +101,9 @@ public class JavasrcToHtmlTest {
 	private void fodderCase(Class<?> fodderClass) {
 		String src = fodderSrc(fodderClass);
 		LOG.info("Converting to html");
-		String html = javasrcToHtml.toHtml(src, cssClassPrefix);
-		String htmlPostFix = ".html";
-		if (cssClassPrefix.length() > 0) {
-			htmlPostFix = "-" + cssClassPrefix + ".html";
-		}
-		writeTmp(fodderClass.getName() + htmlPostFix,
-				demoheader + html + demofooter);
+		String html = javasrcToHtml.toHtml(src);
+		writeTmp(fodderClass.getName() + ".html", demoheader + html
+				+ "</div><div class='altjava'>\n" + html + demofooter);
 		String goldenMaster = goldenMaster(fodderClass);
 		LOG.debug("Comparing to golden master");
 		assertEquals(goldenMaster, html);
@@ -179,17 +171,6 @@ public class JavasrcToHtmlTest {
 	@Test
 	public void genericTypes() {
 		fodderCase(GenericTypes.class);
-	}
-
-	@Test
-	public void allSupportedCssStyles() {
-		fodderCase(AllSupportedCssStyles.class);
-	}
-
-	@Test
-	public void alternativeCssClassPrefix() {
-		cssClassPrefix = "alt_";
-		fodderCase(AllSupportedCssStyles.class);
 	}
 
 }

@@ -9,11 +9,6 @@ import org.apache.commons.lang.StringEscapeUtils;
 public class HtmlRenderer implements Renderer {
 
 	private static final String NBSP = "&nbsp;";
-	private final String cssClassPrefix;
-
-	public HtmlRenderer(String cssClassPrefix) {
-		this.cssClassPrefix = cssClassPrefix;
-	}
 
 	@Override
 	public String render(List<LabeledLine> lines) {
@@ -42,11 +37,9 @@ public class HtmlRenderer implements Renderer {
 		return text;
 	}
 
-	private void labelClasses(StringBuilder b, LabeledSpan span) {
-		Stream<String> labels = span.labels().stream()
-				.map(x -> cssClassPrefix + x.shortName());
-		Stream<String> scopes = span.scopes().stream()
-				.map(x -> cssClassPrefix + x.shortName());
+	private static void labelClasses(StringBuilder b, LabeledSpan span) {
+		Stream<String> labels = span.labels().stream().map(x -> x.shortName());
+		Stream<String> scopes = span.scopes().stream().map(x -> x.shortName());
 		Stream<String> both = Stream.concat(labels, scopes);
 		b.append(both.collect(Collectors.joining(" ")));
 	}

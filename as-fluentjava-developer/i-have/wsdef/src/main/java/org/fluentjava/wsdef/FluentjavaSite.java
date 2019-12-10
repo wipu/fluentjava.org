@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.fluentjava.articles.syntaxcolour.GenericVsTypeDemo;
@@ -21,6 +22,9 @@ import com.google.common.io.LineReader;
 import com.google.common.io.Resources;
 
 public class FluentjavaSite extends TargetBase {
+
+	private static final List<String> STYLES_SUPPORTED_BY_DULL = Arrays
+			.asList(".kw", ".comm");
 
 	private final Source me;
 	private final Source wsdefJava;
@@ -67,12 +71,8 @@ public class FluentjavaSite extends TargetBase {
 				this.java = java;
 			}
 
-			StyledJavaHtml coloured() {
-				return new StyledJavaHtml(j2h.toHtml(java, ""));
-			}
-
-			StyledJavaHtml dull() {
-				return new StyledJavaHtml(j2h.toHtml(java, "min_"));
+			StyledJavaHtml asHtml() {
+				return new StyledJavaHtml(j2h.toHtml(java));
 			}
 
 		}
@@ -109,7 +109,13 @@ public class FluentjavaSite extends TargetBase {
 		html.append(
 				"<link rel=\"stylesheet\" href=\"style.css\" type=\"text/css\" charset=\"utf-8\" />\n");
 		html.append(
+				"<link rel=\"stylesheet\" href=\"div-java.css\" type=\"text/css\" charset=\"utf-8\" />\n");
+		html.append(
+				"<link rel=\"stylesheet\" href=\"div-dulljava.css\" type=\"text/css\" charset=\"utf-8\" />\n");
+		html.append(
 				"<link rel=\"stylesheet\" href=\"java-default.css\" type=\"text/css\" charset=\"utf-8\" />\n");
+		html.append(
+				"<link rel=\"stylesheet\" href=\"java-dull.css\" type=\"text/css\" charset=\"utf-8\" />\n");
 		html.append("</head>\n");
 		html.append("<body>\n");
 		html.append("<h1>Utilize syntax colouring</h1>\n");
@@ -146,10 +152,42 @@ public class FluentjavaSite extends TargetBase {
 		write(new File(dest, "utilize-syntax-colouring.html"), html.toString());
 		write(new File(dest, "style.css"),
 				christmastreeResource("demostyle.css"));
-		write(new File(dest, "java-default.css"),
-				christmastreeResource("java-default.css"));
+
+		String divJavaCss = christmastreeResource("div-java.css");
+		write(new File(dest, "div-java.css"), divJavaCss);
+		write(new File(dest, "div-dulljava.css"),
+				divJavaCss.replace(".java", ".dulljava"));
+
+		String javaDefaultCss = christmastreeResource("java-default.css");
+		write(new File(dest, "java-default.css"), javaDefaultCss);
+		write(new File(dest, "java-dull.css"), dullJavaCss(javaDefaultCss));
 
 		System.err.println("Done populating " + dest);
+	}
+
+	private static String dullJavaCss(String css) throws IOException {
+		StringBuilder b = new StringBuilder();
+		try (StringReader r = new StringReader(css)) {
+			LineReader lr = new LineReader(r);
+			while (true) {
+				String line = lr.readLine();
+				if (line == null) {
+					return b.toString();
+				}
+				if (isCssLineSupportedByDull(line)) {
+					b.append(line.replace(".java ", ".dulljava ")).append("\n");
+				}
+			}
+		}
+	}
+
+	private static boolean isCssLineSupportedByDull(String line) {
+		for (String style : STYLES_SUPPORTED_BY_DULL) {
+			if (line.contains(" " + style + " ")) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private static void snippetPair(StringBuilder html, Utils.Java java,
@@ -157,14 +195,14 @@ public class FluentjavaSite extends TargetBase {
 		html.append("<table><tr>\n");
 
 		html.append("<td>");
-		html.append("<div class='java'>\n");
-		html.append(java.dull().snippet(snippet));
+		html.append("<div class='dulljava'>\n");
+		html.append(java.asHtml().snippet(snippet));
 		html.append("</div>\n");
 		html.append("</td>");
 
 		html.append("<td>");
 		html.append("<div class='java'>\n");
-		html.append(java.coloured().snippet(snippet));
+		html.append(java.asHtml().snippet(snippet));
 		html.append("</div>\n");
 		html.append("</td>");
 

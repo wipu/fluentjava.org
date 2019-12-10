@@ -1,0 +1,11 @@
+.java {
+    font-family:monospace;
+    margin-left:33px;
+    display: inline-block;
+    line-height:1.2em;
+    background-color: #FCFCE7;
+    padding: 8px;
+    border-style: solid;
+    border-color: darkgray;
+    border-width: 1px;
+}
