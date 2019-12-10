@@ -1,5 +1,8 @@
 <span class='kw'>package</span>&nbsp;<span class='id pa-dec'>org</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>fluentjava</span><span class='id pu pa-dec'>.</span><span class='id pa-dec'>christmastree</span><span class='pu'>;</span><br/>
 <br/>
+<span class='kw'>import</span>&nbsp;<span class=''>java</span><span class='pu'>.</span><span class=''>util</span><span class='pu'>.</span><span class=''>ArrayList</span><span class='pu'>;</span><br/>
+<span class='kw'>import</span>&nbsp;<span class=''>java</span><span class='pu'>.</span><span class=''>util</span><span class='pu'>.</span><span class=''>List</span><span class='pu'>;</span><br/>
+<br/>
 <span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>AllSupportedCssStyles</span><span class=''>&lt;</span><span class='id gen-ref'>GENERIC</span>&nbsp;<span class='kw'>extends</span>&nbsp;<span class=''>Annotations&gt;</span>&nbsp;<span class='kw'>extends</span>&nbsp;<span class=''>Literals</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>implements</span>&nbsp;<span class=''>Runnable</span>&nbsp;<span class='pu'>{</span><br/>
 <br/>
@@ -27,6 +30,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>s</span><span class='pu'>.</span><span class='id'>length</span><span class='pu'>();</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;static:</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>String</span><span class='pu'>.</span><span class='id stmeth-call'>valueOf</span><span class='pu'>(</span><span class='kw'>true</span><span class='pu'>);</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='type'>List</span><span class=''>&lt;</span><span class='type gen-diam'>String</span><span class=''>&gt;</span>&nbsp;<span class='id me-name'>typeArgument</span><span class='pu'>(</span><span class='type para'>List</span><span class=''>&lt;</span><span class='type gen-diam'>String</span><span class=''>&gt;</span>&nbsp;<span class='id para'>in</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='type localvar'>ArrayList</span><span class=''>&lt;</span><span class='type gen-diam'>String</span><span class=''>&gt;</span>&nbsp;<span class='id localvar'>out</span>&nbsp;<span class=''>=</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class=''>ArrayList&lt;&gt;</span><span class='pu'>(</span><span class='id para'>in</span><span class='pu'>);</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id localvar'>out</span><span class='pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
 <span class='pu'>}</span><br/>

@@ -1,5 +1,8 @@
 package org.fluentjava.christmastree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AllSupportedCssStyles<GENERIC extends Annotations> extends Literals
 		implements Runnable {
 
@@ -27,6 +30,11 @@ public class AllSupportedCssStyles<GENERIC extends Annotations> extends Literals
 		s.length();
 		// static:
 		String.valueOf(true);
+	}
+
+	List<String> typeArgument(List<String> in) {
+		ArrayList<String> out = new ArrayList<>(in);
+		return out;
 	}
 
 }
