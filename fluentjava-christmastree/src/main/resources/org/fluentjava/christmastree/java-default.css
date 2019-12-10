@@ -1,10 +1,10 @@
-.annot {color: darkgray;}
+.annot {color: #646464;}
 .char {color: #00CC00; font-weight: bold;}
-.kw {font-weight: bold; color: purple;}
+.kw {font-weight: bold; color: #7F0055;}
 .id {color:black;}
-.id.cl-dec {color:darkblue; font-weight: bold;}
-.id.field {color:blue;}
-.id.stfield {color:blue; font-style: italic;}
+.id.cl-dec {color:black;}
+.id.field {color:#0000C0;}
+.id.stfield {color:#0000C0; font-style: italic;}
 .id.type.const {color:black;}
 .id.const {color:#0000C0; font-style: italic; font-weight: bold;}
 .id.type {color:black;}
@@ -12,10 +12,10 @@
 .id.localvar {color:#1E90FF;}
 .id.me-name {font-weight:bold;}
 .id.stmeth-call {font-style: italic;}
-.id.absmeth-call {color: darkgray;}
-.pu {color:darkgray;}
-.comm {color: darkgreen;}
-.gen-diam {color: darkgreen; text-decoration: underline;}
-.gen-ref {color: darkgreen; font-weight: bold;}
+.id.absmeth-call {color: #4D4D4D;}
+.pu {color:#7F7F7F;}
+.comm {color: #3F7F5F;}
+.gen-diam {color: #2E7233; text-decoration: underline;}
+.gen-ref {color: #2E7233; font-weight: bold;}
 .num {color: #FFA500;}
 .str {color: #00CC00;}
