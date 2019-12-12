@@ -25,6 +25,10 @@ public class FluentjavaSite extends TargetBase {
 
 	private static final List<String> STYLES_SUPPORTED_BY_DULL = Arrays
 			.asList(".kw", ".comm");
+	private static final List<Source> manualFiles = Arrays.asList(
+			docsFile("CNAME"), docsFile("christmastree/index.html"),
+			docsFile("index.html"), docsFile("legal-disclaimer.html"),
+			docsFile("style.css"));
 
 	private final Source me;
 	private final Source wsdefJava;
@@ -39,10 +43,15 @@ public class FluentjavaSite extends TargetBase {
 				"as-fluentjava-developer/i-have/wsdef/src/main/java/");
 	}
 
+	private static Source docsFile(String relpath) {
+		return Source.underWsroot("docs/" + relpath);
+	}
+
 	@Override
 	protected IngredientsAndParametersDefined ingredientsAndParameters(
 			IngredientsAndParametersPlease iUse) {
 		return iUse.ingredients("me", me)
+				.ingredients("manualFiles", manualFiles)
 				.ingredients("christmastreeClasses", christmastreeClasses)
 				.ingredients("wsdefJava", wsdefJava).nothingElse();
 	}
@@ -150,8 +159,8 @@ public class FluentjavaSite extends TargetBase {
 		FileUtils.forceMkdir(dest);
 
 		write(new File(dest, "utilize-syntax-colouring.html"), html.toString());
-		write(new File(dest, "style.css"),
-				christmastreeResource("demostyle.css"));
+
+		deployManualFiles(ctx, dest);
 
 		String divJavaCss = christmastreeResource("div-java.css");
 		write(new File(dest, "div-java.css"), divJavaCss);
@@ -163,6 +172,20 @@ public class FluentjavaSite extends TargetBase {
 		write(new File(dest, "java-dull.css"), dullJavaCss(javaDefaultCss));
 
 		System.err.println("Done populating " + dest);
+	}
+
+	private static void deployManualFiles(TargetEvaluationContext ctx,
+			File dest) throws IOException {
+		for (Path mf : manualFiles) {
+			File relFile = new File(mf.name().replaceFirst("^docs/", ""));
+			File destDir = dest;
+			if (relFile.getParent() != null) {
+				destDir = new File(dest, relFile.getParent());
+			}
+			System.err
+					.println("Copying manual file " + mf + " under " + destDir);
+			FileUtils.copyFileToDirectory(ctx.cached(mf), destDir);
+		}
 	}
 
 	private static String dullJavaCss(String css) throws IOException {

@@ -29,8 +29,7 @@ public class FluentjavaWorkspace implements Workspace {
 	public List<? extends Target> targets(TargetDefinitionContext ctx) {
 		List<Target> t = new ArrayList<>();
 		t.add(coverageReport());
-		t.add(new FluentjavaSite(wsdefJavaOf,
-				modules.christmastree.mainArtifact()));
+		t.add(site());
 		return t;
 	}
 
@@ -40,6 +39,11 @@ public class FluentjavaWorkspace implements Workspace {
 		return Arrays.asList(EclipseSettings.with().name("eclipse-settings")
 				.modules(ctx.wsdefdefJavaModule(), ctx.wsdefJavaModule())
 				.modules(modules.allSrcModules()).end());
+	}
+
+	private FluentjavaSite site() {
+		return new FluentjavaSite(wsdefJavaOf,
+				modules.christmastree.mainArtifact());
 	}
 
 	private Target coverageReport() {
