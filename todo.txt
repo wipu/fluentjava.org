@@ -2,3 +2,15 @@
 
 - #christmastree: test different tabwidth (turn into field, not constant)
 
+- article content
+  - naming
+    - short names with comments vs good names
+    - package, class, method rules
+      * com.example.ServiceX.SubService.OperationX
+      * looks like inner classes, but with proper naming we understand:
+        com.example.servicex.SubService.operationX
+      * packages lowercase only, classes capitalized, methods not
+  - misc
+    - don't keep dead code!
+      * e.g. sometimes a refactor may be impossible because of some
+        code that is later found to be dead
