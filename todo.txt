@@ -3,6 +3,10 @@
 - #christmastree: test different tabwidth (turn into field, not constant)
 
 - article content
+  - zero warnings:
+    - helps with eclipse ctrl-., to navigate to errors only
+  - syntax colour:
+    - helps see if loggers are constants
   - naming
     - short names with comments vs good names
     - package, class, method rules
