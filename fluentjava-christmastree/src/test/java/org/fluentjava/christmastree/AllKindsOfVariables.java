@@ -5,6 +5,7 @@ public class AllKindsOfVariables {
 	public static final String CONSTANT = "const value";
 	public String field;
 	private static String staticField;
+	Double doubleWithFieldRefInit = Double.MAX_VALUE;
 
 	public AllKindsOfVariables(String constrParameter) {
 		this.field = constrParameter + staticField + CONSTANT;
