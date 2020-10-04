@@ -35,8 +35,13 @@ public class FluentjavaWorkspaceProvider implements WorkspaceModuleProvider {
 	public static class FluentjavaBuildtimeModules extends JavaModules {
 
 		private static JavaBinModule comGithubJavaparserModule(String subname) {
+			return comGithubJavaparserModule(subname, "3.16.1");
+		}
+
+		private static JavaBinModule comGithubJavaparserModule(String subname,
+				String version) {
 			return binModule("com.github.javaparser", "javaparser-" + subname,
-					"3.14.12");
+					version);
 		}
 
 		private final JavaBinModule comGithubJavaparserCore = comGithubJavaparserModule(
@@ -44,9 +49,9 @@ public class FluentjavaWorkspaceProvider implements WorkspaceModuleProvider {
 		private final JavaBinModule comGithubJavaparserSymbolSolverCore = comGithubJavaparserModule(
 				"symbol-solver-core");
 		private final JavaBinModule comGithubJavaparserSymbolSolverLogic = comGithubJavaparserModule(
-				"symbol-solver-logic");
+				"symbol-solver-logic", "3.15.15");
 		private final JavaBinModule comGithubJavaparserSymbolSolverModel = comGithubJavaparserModule(
-				"symbol-solver-model");
+				"symbol-solver-model", "3.15.15");
 		public final JavaBinModule commonsIo = binModule("commons-io",
 				"commons-io", "2.4");
 		private final JavaBinModule commonsLang = binModule("commons-lang",

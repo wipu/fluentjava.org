@@ -18,6 +18,7 @@ import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.comments.LineComment;
 import com.github.javaparser.ast.expr.AnnotationExpr;
+import com.github.javaparser.ast.expr.BooleanLiteralExpr;
 import com.github.javaparser.ast.expr.CharLiteralExpr;
 import com.github.javaparser.ast.expr.DoubleLiteralExpr;
 import com.github.javaparser.ast.expr.FieldAccessExpr;
@@ -28,6 +29,7 @@ import com.github.javaparser.ast.expr.MarkerAnnotationExpr;
 import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.expr.Name;
 import com.github.javaparser.ast.expr.NameExpr;
+import com.github.javaparser.ast.expr.NullLiteralExpr;
 import com.github.javaparser.ast.expr.SimpleName;
 import com.github.javaparser.ast.expr.SingleMemberAnnotationExpr;
 import com.github.javaparser.ast.expr.StringLiteralExpr;
@@ -271,6 +273,21 @@ public class VisitorImpl extends GenericVisitorWithDefaults<Void, Void> {
 		Location loc = Location.of(n);
 		listener.spanHasLabel(loc, "\"" + n.getValue() + "\"",
 				Label.STRING_LITERAL, null);
+		return recurse(n);
+	}
+
+	@Override
+	public Void visit(BooleanLiteralExpr n, Void arg) {
+		Location loc = Location.of(n);
+		listener.spanHasLabel(loc, Boolean.toString(n.getValue()),
+				Label.KEYWORD, null);
+		return recurse(n);
+	}
+
+	@Override
+	public Void visit(NullLiteralExpr n, Void arg) {
+		Location loc = Location.of(n);
+		listener.spanHasLabel(loc, n.toString(), Label.KEYWORD, null);
 		return recurse(n);
 	}
 

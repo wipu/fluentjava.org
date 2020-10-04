@@ -25,7 +25,7 @@ public class GenericTypes<CLASSTYPE>
 
 	public static <TYPE extends Runnable> TYPE meth(Class<TYPE> clazz)
 			throws Exception {
-		TYPE inst = clazz.newInstance();
+		TYPE inst = clazz.getDeclaredConstructor().newInstance();
 		return inst;
 	}
 

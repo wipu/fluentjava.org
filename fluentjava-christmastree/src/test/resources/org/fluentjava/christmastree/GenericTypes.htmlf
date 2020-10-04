@@ -25,7 +25,7 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class=''>&lt;</span><span class='id gen-ref'>TYPE</span>&nbsp;<span class='kw'>extends</span>&nbsp;<span class=''>Runnable&gt;</span>&nbsp;<span class='type gen-ref'>TYPE</span>&nbsp;<span class='id me-name'>meth</span><span class='pu'>(</span><span class='type para'>Class</span><span class=''>&lt;</span><span class='type gen-diam'>TYPE</span><span class=''>&gt;</span>&nbsp;<span class='id para'>clazz</span><span class='pu'>)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>throws</span>&nbsp;<span class=''>Exception</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='type gen-ref'>TYPE</span>&nbsp;<span class='id localvar'>inst</span>&nbsp;<span class=''>=</span>&nbsp;<span class='id para'>clazz</span><span class='pu'>.</span><span class='id'>newInstance</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='type gen-ref'>TYPE</span>&nbsp;<span class='id localvar'>inst</span>&nbsp;<span class=''>=</span>&nbsp;<span class='id para'>clazz</span><span class='pu'>.</span><span class='id'>getDeclaredConstructor</span><span class='pu'>().</span><span class='id'>newInstance</span><span class='pu'>();</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id localvar'>inst</span><span class='pu'>;</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
