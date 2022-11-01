@@ -1,6 +1,8 @@
 - ask who called my syntax colour scheme "christmastree" and give credits in docs
 
 - fix: green underlined "String" in implements Comparator<String> (GenericTypes.java)
+  + fix
+  - how about not underlining if many: Comparable<GenericTypes<?>> fully black (like in eclipse)?
 
 - maybe: scope is not needed, a 1-dimensional label is enough?
 

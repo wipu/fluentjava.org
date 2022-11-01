@@ -4,11 +4,11 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>@</span><span class='annot'>SuppressWarnings</span><span class='pu'>(</span><span class='str'>&quot;static-method&quot;</span><span class='pu'>)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='type'>MethodCalls</span>&nbsp;<span class='id me-name'>nonStaticFactory</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class=''>MethodCalls</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class='type'>MethodCalls</span><span class='pu'>();</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>private</span>&nbsp;<span class='kw'>static</span>&nbsp;<span class='type'>MethodCalls</span>&nbsp;<span class='id me-name'>staticFactory</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class=''>MethodCalls</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='kw'>new</span>&nbsp;<span class='type'>MethodCalls</span><span class='pu'>();</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>public</span>&nbsp;<span class='type'>String</span>&nbsp;<span class='id me-name'>unqualifiedCaller</span><span class='pu'>()</span>&nbsp;<span class='pu'>{</span><br/>

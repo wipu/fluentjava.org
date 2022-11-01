@@ -34,6 +34,7 @@ import com.github.javaparser.ast.expr.SimpleName;
 import com.github.javaparser.ast.expr.SingleMemberAnnotationExpr;
 import com.github.javaparser.ast.expr.StringLiteralExpr;
 import com.github.javaparser.ast.expr.VariableDeclarationExpr;
+import com.github.javaparser.ast.type.ClassOrInterfaceType;
 import com.github.javaparser.ast.type.Type;
 import com.github.javaparser.ast.type.TypeParameter;
 import com.github.javaparser.ast.visitor.GenericVisitorWithDefaults;
@@ -166,6 +167,12 @@ public class VisitorImpl extends GenericVisitorWithDefaults<Void, Void> {
 	public Void visit(ClassOrInterfaceDeclaration n, Void arg) {
 		SimpleName name = n.getName();
 		reportName(name, Scope.CLASS_DECLARATION);
+		return recurse(n);
+	}
+
+	@Override
+	public Void visit(ClassOrInterfaceType n, Void arg) {
+		reportType(n.getElementType(), null);
 		return recurse(n);
 	}
 
