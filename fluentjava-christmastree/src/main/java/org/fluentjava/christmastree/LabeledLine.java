@@ -15,11 +15,11 @@ public class LabeledLine {
 		this.rawContent = rawContent;
 		this.charLabels = new ArrayList<>();
 		for (int i = 0; i < rawContent.length(); i++) {
-			charLabels.add(new TreeSet<Label>());
+			charLabels.add(new TreeSet<>());
 		}
 		this.charScopes = new ArrayList<>();
 		for (int i = 0; i < rawContent.length(); i++) {
-			charScopes.add(new TreeSet<Scope>());
+			charScopes.add(new TreeSet<>());
 		}
 	}
 
