@@ -1,3 +1,7 @@
+- java17 and record
+  + upgrade, record to html
+  - use local variable colour for the property
+
 - ask who called my syntax colour scheme "christmastree" and give credits in docs
 
 - fix: green underlined "String" in implements Comparator<String> (GenericTypes.java)

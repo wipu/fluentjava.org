@@ -173,4 +173,9 @@ public class JavasrcToHtmlTest {
 		fodderCase(GenericTypes.class);
 	}
 
+	@Test
+	public void aRecord() {
+		fodderCase(ARecord.class);
+	}
+
 }

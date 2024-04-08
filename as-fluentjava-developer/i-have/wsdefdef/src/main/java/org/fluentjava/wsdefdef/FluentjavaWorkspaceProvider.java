@@ -1,7 +1,9 @@
 package org.fluentjava.wsdefdef;
 
 import org.fluentjava.iwant.api.javamodules.JavaBinModule;
+import org.fluentjava.iwant.api.javamodules.JavaCompliance;
 import org.fluentjava.iwant.api.javamodules.JavaSrcModule;
+import org.fluentjava.iwant.api.javamodules.JavaSrcModule.IwantSrcModuleSpex;
 import org.fluentjava.iwant.api.model.Source;
 import org.fluentjava.iwant.api.wsdef.WorkspaceModuleContext;
 import org.fluentjava.iwant.api.wsdef.WorkspaceModuleProvider;
@@ -34,8 +36,15 @@ public class FluentjavaWorkspaceProvider implements WorkspaceModuleProvider {
 	 */
 	public static class FluentjavaBuildtimeModules extends JavaModules {
 
+		public static final JavaCompliance JAVA_COMPLIANCE = JavaCompliance.JAVA_17;
+
+		@Override
+		public IwantSrcModuleSpex commonSettings(IwantSrcModuleSpex m) {
+			return m.javaCompliance(JAVA_COMPLIANCE).mavenLayout();
+		}
+
 		private static JavaBinModule comGithubJavaparserModule(String subname) {
-			return comGithubJavaparserModule(subname, "3.16.1");
+			return comGithubJavaparserModule(subname, "3.25.10");
 		}
 
 		private static JavaBinModule comGithubJavaparserModule(String subname,
