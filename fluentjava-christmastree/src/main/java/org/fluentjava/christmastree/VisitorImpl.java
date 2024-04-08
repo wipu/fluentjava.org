@@ -15,6 +15,7 @@ import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
+import com.github.javaparser.ast.body.RecordDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.comments.LineComment;
 import com.github.javaparser.ast.expr.AnnotationExpr;
@@ -243,6 +244,17 @@ public class VisitorImpl extends GenericVisitorWithDefaults<Void, Void> {
 		for (Parameter param : n.getParameters()) {
 			reportName(param.getName(), Scope.PARAMETER);
 			reportType(param.getType(), Scope.PARAMETER);
+		}
+		return recurse(n);
+	}
+
+	@Override
+	public Void visit(RecordDeclaration n, Void arg) {
+		SimpleName name = n.getName();
+		reportName(name, Scope.CLASS_DECLARATION);
+		for (Parameter param : n.getParameters()) {
+			reportName(param.getName(), Scope.LOCAL_VAR);
+			reportType(param.getType(), Scope.LOCAL_VAR);
 		}
 		return recurse(n);
 	}
