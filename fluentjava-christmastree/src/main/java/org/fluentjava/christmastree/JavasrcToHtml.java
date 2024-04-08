@@ -4,9 +4,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.javaparser.JavaParser;
+import com.github.javaparser.ParseResult;
 import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.ParserConfiguration.LanguageLevel;
-import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.symbolsolver.javaparsermodel.JavaParserFacade;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.ClassLoaderTypeSolver;
@@ -39,10 +40,14 @@ public class JavasrcToHtml {
 
 	public String toHtml(String java) {
 		String untabbedJava = java.replaceAll("\t", tabSpaces);
-		// TODO find and use a non-static api:
-		ParserConfiguration conf = StaticJavaParser.getConfiguration();
+
+		ParserConfiguration conf = new ParserConfiguration();
 		conf.setLanguageLevel(LanguageLevel.JAVA_17);
-		CompilationUnit cu = StaticJavaParser.parse(untabbedJava);
+		JavaParser jp = new JavaParser(conf);
+		ParseResult<CompilationUnit> result = jp.parse(untabbedJava);
+		// TODO friendly error message for compilation error:
+		CompilationUnit cu = result.getResult().get();
+
 		SpanLabelListenerImpl spanListener = new SpanLabelListenerImpl(
 				untabbedJava);
 		VisitorImpl astVisitor = new VisitorImpl(spanListener, solvingParser);
