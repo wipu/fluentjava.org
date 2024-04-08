@@ -2,7 +2,8 @@ package org.fluentjava.christmastree;
 
 import java.lang.reflect.Field;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.github.javaparser.JavaToken;
 import com.github.javaparser.ast.CompilationUnit;
@@ -50,7 +51,8 @@ import com.github.javaparser.symbolsolver.reflectionmodel.ReflectionFieldDeclara
 
 public class VisitorImpl extends GenericVisitorWithDefaults<Void, Void> {
 
-	private static final Logger LOG = Logger.getLogger(VisitorImpl.class);
+	private static final Logger LOG = LoggerFactory
+			.getLogger(VisitorImpl.class);
 	private final SpanLabelListener listener;
 	private final JavaParserFacade solvingParser;
 
@@ -100,7 +102,7 @@ public class VisitorImpl extends GenericVisitorWithDefaults<Void, Void> {
 		if (n instanceof Name || n instanceof SimpleName) {
 			line.append(":").append(n);
 		}
-		LOG.trace(line);
+		LOG.trace(line.toString());
 		for (Node c : n.getChildNodes()) {
 			logTree(c, indentation + 1);
 		}

@@ -73,8 +73,13 @@ public class FluentjavaWorkspaceProvider implements WorkspaceModuleProvider {
 				"javassist", "3.25.0-GA");
 		private final JavaBinModule junit = binModule("junit", "junit", "4.11",
 				hamcrestCore);
-		private final JavaBinModule log4j = binModule("log4j", "log4j",
-				"1.2.16");
+		final JavaBinModule slf4jApi = binModule("org.slf4j", "slf4j-api",
+				"2.0.12");
+		private static final String LOGBACK_VER = "1.5.3";
+		final JavaBinModule logbackClassic = binModule("ch.qos.logback",
+				"logback-classic", LOGBACK_VER);
+		final JavaBinModule logbackCore = binModule("ch.qos.logback",
+				"logback-core", LOGBACK_VER);
 
 		private final JavaBinModule christmastreeTestJava = JavaBinModule
 				.providing(Source
@@ -86,9 +91,10 @@ public class FluentjavaWorkspaceProvider implements WorkspaceModuleProvider {
 								comGithubJavaparserSymbolSolverCore,
 								comGithubJavaparserSymbolSolverLogic,
 								comGithubJavaparserSymbolSolverModel,
-								commonsLang, javassist, log4j)
+								commonsLang, javassist, slf4jApi)
 						.testDeps(commonsIo, guava, junit)
-						.testRuntimeDeps(christmastreeTestJava).end();
+						.testRuntimeDeps(christmastreeTestJava)
+						.testRuntimeDeps(logbackClassic, logbackCore).end();
 	}
 
 }

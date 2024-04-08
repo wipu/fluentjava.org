@@ -10,16 +10,18 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.io.Resources;
 
 public class JavasrcToHtmlTest {
 
-	private static final Logger LOG = Logger.getLogger(JavasrcToHtmlTest.class);
+	private static final Logger LOG = LoggerFactory
+			.getLogger(JavasrcToHtmlTest.class);
 	private static final int TAB_WIDTH = 4;
 	private static File tmp;
 	private static String demoheader;

@@ -16,6 +16,3 @@
 
 - tasks for TODO comments in code
 
-- remove dependency to log4j
-  * replace with slf4j?
-  * or remove all logging when things have stabilized?
