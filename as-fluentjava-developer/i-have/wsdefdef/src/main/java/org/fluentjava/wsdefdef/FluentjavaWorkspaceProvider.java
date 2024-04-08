@@ -62,15 +62,15 @@ public class FluentjavaWorkspaceProvider implements WorkspaceModuleProvider {
 		private final JavaBinModule comGithubJavaparserSymbolSolverModel = comGithubJavaparserModule(
 				"symbol-solver-model", "3.15.15");
 		public final JavaBinModule commonsIo = binModule("commons-io",
-				"commons-io", "2.4");
+				"commons-io", "2.16.0");
 		private final JavaBinModule commonsLang = binModule("commons-lang",
 				"commons-lang", "2.6");
 		private final JavaBinModule guava = binModule("com.google.guava",
-				"guava", "18.0");
+				"guava", "33.1.0-jre");
 		private final JavaBinModule hamcrestCore = binModule("org/hamcrest",
 				"hamcrest-core", "1.3");
 		private final JavaBinModule javassist = binModule("org.javassist",
-				"javassist", "3.25.0-GA");
+				"javassist", "3.30.2-GA");
 		private final JavaBinModule junit = binModule("junit", "junit", "4.11",
 				hamcrestCore);
 		final JavaBinModule slf4jApi = binModule("org.slf4j", "slf4j-api",
