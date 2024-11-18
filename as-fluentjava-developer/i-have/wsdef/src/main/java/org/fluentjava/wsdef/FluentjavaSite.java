@@ -237,7 +237,7 @@ public class FluentjavaSite extends TargetBase {
 		String relPath = theClass.getCanonicalName().replace(".", "/");
 		File demoJavaFile = new File(ctx.cached(wsdefJava), relPath + ".java");
 		System.err.println("Reading " + demoJavaFile);
-		return FileUtils.readFileToString(demoJavaFile);
+		return FileUtils.readFileToString(demoJavaFile, StandardCharsets.UTF_8);
 	}
 
 	// TODO use some ready-made util
@@ -276,7 +276,7 @@ public class FluentjavaSite extends TargetBase {
 
 	private static void write(File file, String content) throws IOException {
 		System.err.println("Writing " + file);
-		FileUtils.writeStringToFile(file, content);
+		FileUtils.writeStringToFile(file, content, StandardCharsets.UTF_8);
 	}
 
 }

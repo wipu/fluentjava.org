@@ -116,7 +116,7 @@ public class JavasrcToHtmlTest {
 		File file = new File(tmp, fileName);
 		LOG.debug("Writing " + file);
 		try {
-			FileUtils.writeStringToFile(file, html);
+			FileUtils.writeStringToFile(file, html, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			throw new IllegalArgumentException("Failed to write to tmp", e);
 		}
