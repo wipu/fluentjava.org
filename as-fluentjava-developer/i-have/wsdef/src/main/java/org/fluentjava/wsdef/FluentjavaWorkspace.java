@@ -19,10 +19,11 @@ import org.fluentjava.iwant.plugin.jacoco.JacocoTargetsOfJavaModules;
 public class FluentjavaWorkspace implements Workspace {
 
 	private final WsdefJavaOf wsdefJavaOf;
-	private final FluentjavaModules modules = new FluentjavaModules();
+	private final FluentjavaModules modules;
 
 	public FluentjavaWorkspace(WorkspaceContext wsCtx) {
 		this.wsdefJavaOf = new WsdefJavaOf(wsCtx);
+		this.modules = new FluentjavaModules(wsCtx);
 	}
 
 	@Override
