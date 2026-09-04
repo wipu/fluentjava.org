@@ -1,0 +1,21 @@
+.java .annot {color: #646464;}
+.java .char {color: #00CC00; font-weight: bold;}
+.java .kw {font-weight: bold; color: #7F0055;}
+.java .id {color:black;}
+.java .id.cl-dec {color:black;}
+.java .id.field {color:#0000C0;}
+.java .id.stfield {color:#0000C0; font-style: italic;}
+.java .id.type.const {color:black;}
+.java .id.const {color:#0000C0; font-style: italic; font-weight: bold;}
+.java .id.type {color:black;}
+.java .id.para {color:#8B6914;}
+.java .id.localvar {color:#1E90FF;}
+.java .id.me-name {font-weight:bold;}
+.java .id.stmeth-call {font-style: italic;}
+.java .id.absmeth-call {color: #4D4D4D;}
+.java .pu {color:#7F7F7F;}
+.java .comm {color: #3F7F5F;}
+.java .gen-diam {color: #2E7233; text-decoration: underline;}
+.java .gen-ref {color: #2E7233; font-weight: bold;}
+.java .num {color: #FFA500;}
+.java .str {color: #00CC00;}

@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>syntax color proto</title>
+<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="div-java.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="div-dulljava.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="java-default.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="java-dull.css" type="text/css" charset="utf-8" />
+</head>
+<body>
+<h1>Utilize syntax colouring</h1>
+<h2>Detecting use of a concrete implementation of a service</h2>
+<table><tr>
+<td><div class='dulljava'>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useConcreteServiceImpl</span><span class='pu'>(</span><span class='type para'>ServiceImpl</span>&nbsp;<span class='id para'>service</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>service</span><span class='pu'>.</span><span class='id'>serveMe</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useAbstractService</span><span class='pu'>(</span><span class='type para'>Service</span>&nbsp;<span class='id para'>service</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>service</span><span class='pu'>.</span><span class='id absmeth-call'>serveMe</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+</div>
+</td><td><div class='java'>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useConcreteServiceImpl</span><span class='pu'>(</span><span class='type para'>ServiceImpl</span>&nbsp;<span class='id para'>service</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>service</span><span class='pu'>.</span><span class='id'>serveMe</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useAbstractService</span><span class='pu'>(</span><span class='type para'>Service</span>&nbsp;<span class='id para'>service</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>service</span><span class='pu'>.</span><span class='id absmeth-call'>serveMe</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+</div>
+</td></tr></table>
+<p>Note how the colour of 'serveMe' helps us detect the (accidental?) use of a concrete class. Also, in the case of an abstract method we know it's not useful to ctrl-click to it unless you really want to see the abstract declaration. Ctrl-T instead to select an implementation.</p>
+<h2>Accidental reference of a field</h2>
+<table><tr>
+<td><div class='dulljava'>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>accidentalFieldScope</span><span class='pu'>(</span><span class='type para'>Session</span>&nbsp;<span class='id para'>session</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttribute</span><span class='pu'>(</span><span class='id para'>session</span><span class='pu'>.</span><span class='id absmeth-call'>getAttribute</span><span class='pu'>(</span><span class='str'>&quot;attr1&quot;</span><span class='pu'>));</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;here&nbsp;we&nbsp;have&nbsp;so&nbsp;many&nbsp;lines&nbsp;of&nbsp;code&nbsp;that</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;we&nbsp;cannot&nbsp;see&nbsp;the&nbsp;method&nbsp;parameter&nbsp;declaration</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;anymore</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttribute</span><span class='pu'>(</span><span class='id field'>theSession</span><span class='pu'>.</span><span class='id absmeth-call'>getAttribute</span><span class='pu'>(</span><span class='str'>&quot;attr2&quot;</span><span class='pu'>));</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+</div>
+</td><td><div class='java'>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>accidentalFieldScope</span><span class='pu'>(</span><span class='type para'>Session</span>&nbsp;<span class='id para'>session</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttribute</span><span class='pu'>(</span><span class='id para'>session</span><span class='pu'>.</span><span class='id absmeth-call'>getAttribute</span><span class='pu'>(</span><span class='str'>&quot;attr1&quot;</span><span class='pu'>));</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;here&nbsp;we&nbsp;have&nbsp;so&nbsp;many&nbsp;lines&nbsp;of&nbsp;code&nbsp;that</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;we&nbsp;cannot&nbsp;see&nbsp;the&nbsp;method&nbsp;parameter&nbsp;declaration</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;anymore</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttribute</span><span class='pu'>(</span><span class='id field'>theSession</span><span class='pu'>.</span><span class='id absmeth-call'>getAttribute</span><span class='pu'>(</span><span class='str'>&quot;attr2&quot;</span><span class='pu'>));</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+</div>
+</td></tr></table>
+<p>Even though we cannot see the method signature, colour tells us when we are using the given (current) session 'session' and when we are (accidentally?) using some other session, saved in the field 'theSession'.</p>
+<h2>Generic type vs non-generic type</h2>
+<table><tr>
+<td><div class='dulljava'>
+<span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>GenericVsTypeDemo</span><span class=''>&lt;</span><span class='id gen-ref'>T1</span><span class=''>&gt;</span>&nbsp;<span class='pu'>{</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>interface</span>&nbsp;<span class='id cl-dec'>T2</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;a&nbsp;non-generic&nbsp;type</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='type gen-ref'>T1</span>&nbsp;<span class='id me-name'>handle</span><span class='pu'>(</span><span class='type gen-ref'>T1</span>&nbsp;<span class='id para'>in</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id para'>in</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='type'>T2</span>&nbsp;<span class='id me-name'>handle</span><span class='pu'>(</span><span class='type para'>T2</span>&nbsp;<span class='id para'>in</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id para'>in</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+<span class='pu'>}</span><br/>
+</div>
+</td><td><div class='java'>
+<span class='kw'>public</span>&nbsp;<span class='kw'>class</span>&nbsp;<span class='id cl-dec'>GenericVsTypeDemo</span><span class=''>&lt;</span><span class='id gen-ref'>T1</span><span class=''>&gt;</span>&nbsp;<span class='pu'>{</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>interface</span>&nbsp;<span class='id cl-dec'>T2</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;a&nbsp;non-generic&nbsp;type</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='type gen-ref'>T1</span>&nbsp;<span class='id me-name'>handle</span><span class='pu'>(</span><span class='type gen-ref'>T1</span>&nbsp;<span class='id para'>in</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id para'>in</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='type'>T2</span>&nbsp;<span class='id me-name'>handle</span><span class='pu'>(</span><span class='type para'>T2</span>&nbsp;<span class='id para'>in</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>return</span>&nbsp;<span class='id para'>in</span><span class='pu'>;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
+<br/>
+<span class='pu'>}</span><br/>
+</div>
+</td></tr></table>
+<p>No use trying to find a type called T2, which we can see from its colour.</p><p>See blah and todo and how the latter is better, and how IDE defaults are somewhere in between etc.</p>
+</body>
+</html>
