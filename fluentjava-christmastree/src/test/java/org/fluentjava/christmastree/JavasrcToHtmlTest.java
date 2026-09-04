@@ -16,6 +16,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.io.Files;
 import com.google.common.io.Resources;
 
 public class JavasrcToHtmlTest {
@@ -73,8 +74,7 @@ public class JavasrcToHtmlTest {
 		File java = new File(testFodderDir(), resourcePath);
 		LOG.debug("Loading fodder file " + java);
 		try {
-			return com.google.common.io.Files.toString(java,
-					StandardCharsets.UTF_8);
+			return Files.asCharSource(java, StandardCharsets.UTF_8).read();
 		} catch (IOException e) {
 			throw new IllegalArgumentException(e);
 		}
