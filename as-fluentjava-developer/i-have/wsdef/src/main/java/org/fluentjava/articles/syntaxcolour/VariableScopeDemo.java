@@ -28,8 +28,9 @@ public class VariableScopeDemo {
 	void accidentalFieldScope(Session session) {
 		useSessionAttribute(session.getAttribute("attr1"));
 
-		// here we have so many lines of code that we cannot see the method
-		// parameter declaration anymore
+		// here we have so many lines of code that
+		// we cannot see the method parameter declaration
+		// anymore
 
 		useSessionAttribute(theSession.getAttribute("attr2"));
 	}
