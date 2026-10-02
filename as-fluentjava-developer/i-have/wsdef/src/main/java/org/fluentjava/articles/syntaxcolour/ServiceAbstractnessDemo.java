@@ -18,12 +18,12 @@ public class ServiceAbstractnessDemo {
 	}
 
 	// snippet-start the-calls
-	void useConcreteServiceImpl(ServiceImpl service) {
-		service.serveMe();
+	void useConcreteServiceImpl(ServiceImpl srv) {
+		srv.serveMe();
 	}
 
-	void useAbstractService(Service service) {
-		service.serveMe();
+	void useAbstractService(Service srv) {
+		srv.serveMe();
 	}
 	// snippet-end the-calls
 

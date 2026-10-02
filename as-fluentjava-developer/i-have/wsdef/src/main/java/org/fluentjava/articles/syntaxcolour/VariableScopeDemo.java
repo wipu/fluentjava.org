@@ -3,13 +3,12 @@ package org.fluentjava.articles.syntaxcolour;
 public class VariableScopeDemo {
 
 	interface Session {
-		String getAttribute(String name);
+		String getAttr(String name);
 	}
 
 	Session theSession;
 
-	private void useSessionAttribute(
-			@SuppressWarnings("unused") String attribute) {
+	private void useSessionAttr(@SuppressWarnings("unused") String attribute) {
 		// nothing to do
 	}
 
@@ -26,13 +25,13 @@ public class VariableScopeDemo {
 
 	// snippet-start accidental-field-scope
 	void accidentalFieldScope(Session session) {
-		useSessionAttribute(session.getAttribute("attr1"));
+		useSessionAttr(session.getAttr("attr1"));
 
 		// here we have so many lines of code that
-		// we cannot see the method parameter declaration
-		// anymore
+		// we cannot see the method parameter
+		// declaration anymore
 
-		useSessionAttribute(theSession.getAttribute("attr2"));
+		useSessionAttr(theSession.getAttr("attr2"));
 	}
 	// snippet-end accidental-field-scope
 

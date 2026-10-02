@@ -127,6 +127,15 @@ public class FluentjavaSite extends TargetBase {
 				"<link rel=\"stylesheet\" href=\"java-dull.css\" type=\"text/css\" charset=\"utf-8\" />\n");
 		html.append("</head>\n");
 		html.append("<body>\n");
+
+		// TODO common page html:
+		html.append("<div class='article'>\n");
+		html.append("      <div class='pageh'>\n");
+		html.append("	<div class='pageh1'>fluentjava.org</div>\n");
+		html.append(
+				"	<div class='pageh2'>The fluent java community hub</div>\n");
+		html.append("      </div>\n");
+
 		html.append("<h1>Utilize syntax colouring</h1>\n");
 
 		html.append(
@@ -151,6 +160,7 @@ public class FluentjavaSite extends TargetBase {
 		html.append(
 				"<p>See blah and todo and how the latter is better, and how IDE defaults are somewhere in between etc.</p>\n");
 
+		html.append("</div>\n");
 		html.append("</body>\n");
 		html.append("</html>\n");
 
