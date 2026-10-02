@@ -8,25 +8,30 @@
 <link rel="stylesheet" href="java-dull.css" type="text/css" charset="utf-8" />
 </head>
 <body>
+<div class='article'>
+      <div class='pageh'>
+	<div class='pageh1'>fluentjava.org</div>
+	<div class='pageh2'>The fluent java community hub</div>
+      </div>
 <h1>Utilize syntax colouring</h1>
 <h2>Detecting use of a concrete implementation of a service</h2>
 <table><tr>
 <td><div class='dulljava'>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useConcreteServiceImpl</span><span class='pu'>(</span><span class='type para'>ServiceImpl</span>&nbsp;<span class='id para'>service</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>service</span><span class='pu'>.</span><span class='id'>serveMe</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useConcreteServiceImpl</span><span class='pu'>(</span><span class='type para'>ServiceImpl</span>&nbsp;<span class='id para'>srv</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>srv</span><span class='pu'>.</span><span class='id'>serveMe</span><span class='pu'>();</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useAbstractService</span><span class='pu'>(</span><span class='type para'>Service</span>&nbsp;<span class='id para'>service</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>service</span><span class='pu'>.</span><span class='id absmeth-call'>serveMe</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useAbstractService</span><span class='pu'>(</span><span class='type para'>Service</span>&nbsp;<span class='id para'>srv</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>srv</span><span class='pu'>.</span><span class='id absmeth-call'>serveMe</span><span class='pu'>();</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 </div>
 </td><td><div class='java'>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useConcreteServiceImpl</span><span class='pu'>(</span><span class='type para'>ServiceImpl</span>&nbsp;<span class='id para'>service</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>service</span><span class='pu'>.</span><span class='id'>serveMe</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useConcreteServiceImpl</span><span class='pu'>(</span><span class='type para'>ServiceImpl</span>&nbsp;<span class='id para'>srv</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>srv</span><span class='pu'>.</span><span class='id'>serveMe</span><span class='pu'>();</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useAbstractService</span><span class='pu'>(</span><span class='type para'>Service</span>&nbsp;<span class='id para'>service</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>service</span><span class='pu'>.</span><span class='id absmeth-call'>serveMe</span><span class='pu'>();</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>useAbstractService</span><span class='pu'>(</span><span class='type para'>Service</span>&nbsp;<span class='id para'>srv</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id para'>srv</span><span class='pu'>.</span><span class='id absmeth-call'>serveMe</span><span class='pu'>();</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 </div>
 </td></tr></table>
@@ -35,24 +40,24 @@
 <table><tr>
 <td><div class='dulljava'>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>accidentalFieldScope</span><span class='pu'>(</span><span class='type para'>Session</span>&nbsp;<span class='id para'>session</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttribute</span><span class='pu'>(</span><span class='id para'>session</span><span class='pu'>.</span><span class='id absmeth-call'>getAttribute</span><span class='pu'>(</span><span class='str'>&quot;attr1&quot;</span><span class='pu'>));</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttr</span><span class='pu'>(</span><span class='id para'>session</span><span class='pu'>.</span><span class='id absmeth-call'>getAttr</span><span class='pu'>(</span><span class='str'>&quot;attr1&quot;</span><span class='pu'>));</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;here&nbsp;we&nbsp;have&nbsp;so&nbsp;many&nbsp;lines&nbsp;of&nbsp;code&nbsp;that</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;we&nbsp;cannot&nbsp;see&nbsp;the&nbsp;method&nbsp;parameter&nbsp;declaration</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;anymore</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;we&nbsp;cannot&nbsp;see&nbsp;the&nbsp;method&nbsp;parameter</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;declaration&nbsp;anymore</span><br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttribute</span><span class='pu'>(</span><span class='id field'>theSession</span><span class='pu'>.</span><span class='id absmeth-call'>getAttribute</span><span class='pu'>(</span><span class='str'>&quot;attr2&quot;</span><span class='pu'>));</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttr</span><span class='pu'>(</span><span class='id field'>theSession</span><span class='pu'>.</span><span class='id absmeth-call'>getAttr</span><span class='pu'>(</span><span class='str'>&quot;attr2&quot;</span><span class='pu'>));</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 </div>
 </td><td><div class='java'>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='kw'>void</span>&nbsp;<span class='id me-name'>accidentalFieldScope</span><span class='pu'>(</span><span class='type para'>Session</span>&nbsp;<span class='id para'>session</span><span class='pu'>)</span>&nbsp;<span class='pu'>{</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttribute</span><span class='pu'>(</span><span class='id para'>session</span><span class='pu'>.</span><span class='id absmeth-call'>getAttribute</span><span class='pu'>(</span><span class='str'>&quot;attr1&quot;</span><span class='pu'>));</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttr</span><span class='pu'>(</span><span class='id para'>session</span><span class='pu'>.</span><span class='id absmeth-call'>getAttr</span><span class='pu'>(</span><span class='str'>&quot;attr1&quot;</span><span class='pu'>));</span><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;here&nbsp;we&nbsp;have&nbsp;so&nbsp;many&nbsp;lines&nbsp;of&nbsp;code&nbsp;that</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;we&nbsp;cannot&nbsp;see&nbsp;the&nbsp;method&nbsp;parameter&nbsp;declaration</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;anymore</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;we&nbsp;cannot&nbsp;see&nbsp;the&nbsp;method&nbsp;parameter</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='comm'>//&nbsp;declaration&nbsp;anymore</span><br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttribute</span><span class='pu'>(</span><span class='id field'>theSession</span><span class='pu'>.</span><span class='id absmeth-call'>getAttribute</span><span class='pu'>(</span><span class='str'>&quot;attr2&quot;</span><span class='pu'>));</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='id'>useSessionAttr</span><span class='pu'>(</span><span class='id field'>theSession</span><span class='pu'>.</span><span class='id absmeth-call'>getAttr</span><span class='pu'>(</span><span class='str'>&quot;attr2&quot;</span><span class='pu'>));</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class='pu'>}</span><br/>
 </div>
 </td></tr></table>
@@ -95,5 +100,6 @@
 </div>
 </td></tr></table>
 <p>No use trying to find a type called T2, which we can see from its colour.</p><p>See blah and todo and how the latter is better, and how IDE defaults are somewhere in between etc.</p>
+</div>
 </body>
 </html>
