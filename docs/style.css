@@ -64,3 +64,8 @@ a {
 .legal {
     text-transform: uppercase;
 }
+
+ul li {
+    color: #003333;
+    list-style-type: circle;
+}
